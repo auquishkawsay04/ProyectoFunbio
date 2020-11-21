@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 LARGE_FONT = ("Arial", 80)
-MEDIUM_FONT = ("Arial", 200)
+MEDIUM_FONT = ("Arial", 20)
 SMALL_FONT = ("Verdana", 19)
 
 
@@ -120,6 +120,6 @@ class PaginaRegistro(tk.Frame):
 
 
 app = AuquishApp()
-app.geometry("1250x820")
+app.geometry("1150x720")
 app.resizable(False, False)
 app.mainloop()
