@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 LARGE_FONT = ("Arial", 90)
-MEDIUM_FONT = ("Verdana", 30)
+MEDIUM_FONT = ("Verdana", 200)
 SMALL_FONT = ("Verdana", 19)
 
 
