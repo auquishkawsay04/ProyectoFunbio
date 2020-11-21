@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-LARGE_FONT = ("Verdana", 45)
+LARGE_FONT = ("Arial", 45)
 MEDIUM_FONT = ("Verdana", 30)
 SMALL_FONT = ("Verdana", 19)
 
@@ -28,7 +28,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(PaginaRegistro)
+        self.show_frame(Login   )
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -48,7 +48,7 @@ class Login(tk.Frame):
             else:
                 incorrect_password_label["text"] = "La contraseña que ingresó es incorrecta. Inténtelo de nuevo"
 
-        label = tk.Label(self, text="título", font=LARGE_FONT, bg="white")
+        label = tk.Label(self, text="título", font=LARGE_FONT, bg="blue")
         label.pack(pady=60, padx=40)
 
         password_label = tk.Label(self, text="Ingrese su contraseña", bg="white", fg="black", font=SMALL_FONT)
