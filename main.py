@@ -29,9 +29,6 @@ class AuquishApp(tk.Tk):
 
         self.frames = {}
 
-#                   Login PaginaInicio ActualizarRegistro Resultados              David
-#                   PaginaBusquedaDni  PaginaNuevoPaciente     PacienteRegistrado  Nestor
-
         for F in (Login, Ramas, ActualizarRegistroNuevo, MostradorResultados, BuscadorDNI, HistoriaPacienteAntiguo, RegistrarNuevoPaciente):
             frame = F(container, self)
 
@@ -39,13 +36,13 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(ActualizarRegistroNuevo)
+        self.show_frame(Ramas)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
-#INICIO CODIGO DAVID LINEA 40
+#INICIO CODIGO DAVID LINEA 45
 
 class Login(tk.Frame):
 
@@ -83,13 +80,15 @@ class Ramas(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#a281cc")
 
+#   pacientesRegistrados
         button1 = tk.Button(self, text="PACIENTES REGISTRADOS", font=FUENTE3, relief="groove",
-                            borderwidth=2, width=80, height=1, command=lambda: controller.show_frame(BuscadorDNI))
-        button1.place(x=240, y=200)
+                            borderwidth=2, command=lambda: controller.show_frame(BuscadorDNI))
+        button1.grid(row=1, column=1)
 
+#   nuevosPacientes
         button2 = tk.Button(self, text="REGISTRAR UN NUEVO PACIENTE", font=FUENTE3, relief="groove",
-                            borderwidth=2, width=30, height=1, command=lambda: controller.show_frame(RegistrarNuevoPaciente))
-        button2.place(x=240, y=400)
+                            borderwidth=2, command=lambda: controller.show_frame(RegistrarNuevoPaciente))
+        button2.grid(row=2, column=1)
 
 class ActualizarRegistroNuevo(tk.Frame):
 
@@ -121,25 +120,36 @@ class ActualizarRegistroNuevo(tk.Frame):
         entrada_tscore = tk.Entry(self, font=FUENTE0, width=9, bg="white")
         entrada_tscore.grid(row=3,column=2)
 
+#   boton resultados
         button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2)
         button.grid(row=4,column=1)
-
-
 
 
 class MostradorResultados(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#a281cc")
+#   titulo
+        labelM = tk.Label(self, text="Resultados del 04/12/19", font=FUENTE1, bg="#c2deb5", fg="black",relief="groove")
+        labelM.grid(row=0,column=1)
 
-        tk.Frame.__init__(self, parent, background="#a281cc")
+#   estadooseoactual
+        label1 = tk.Label(self, text="Estado óseo actual:", font=FUENTE1, bg="#a281cc")
+        label1.grid(row=1,column=2)
 
-        button1 = tk.Button(self, text="PACIENTES REGISTRADOS", font=FUENTE3, relief="groove",
-                            borderwidth=2, width=30, height=1)
-        button1.place(x=240, y=200)
+        resultadoOseoDensitometria = tk.Label(self, text=" Osteoporosis Grave ", font=FUENTE0, bg="white")
+        resultadoOseoDensitometria.grid(row=2, column=2)
 
+#   recomendaciones
+        label2 = tk.Label(self, text="Recomendaciones:", font=FUENTE1, bg="#a281cc")
+        label2.grid(row=3,column=2)
 
+        resultadoRecomendaciones = tk.Label(self, text=" Ir a la playa. ", font=FUENTE0, bg="white")
+        resultadoRecomendaciones.grid(row=4, column=2)
 
+#   boton imprimir resultados
+        button = tk.Button(self, text="Imprimir resultados", font=FUENTE1, relief="groove", borderwidth=2)
+        button.grid(row=5,column=3)
 
 
 
@@ -217,8 +227,8 @@ class MostradorResultados(tk.Frame):
 
 
 
-# -----------------------------------FIN CODIGO DAVID LINEA 209------------------------------------------------------
-# -----------------------------------INICIO CODIGO NESTOR LINEA 210--------------------------------------------------
+# -----------------------------------FIN CODIGO DAVID LINEA 230------------------------------------------------------
+# -----------------------------------INICIO CODIGO NESTOR LINEA 231--------------------------------------------------
 
 class BuscadorDNI(tk.Frame):
 
