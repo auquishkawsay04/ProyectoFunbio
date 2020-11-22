@@ -97,7 +97,7 @@ class ActualizarRegistroNuevo(tk.Frame):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 #   titulo
         label12 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE1, bg="#c2deb5", fg="black",relief="groove")
-        label12.grid(row=0,column=0)
+        label12.grid(row=0,column=1)
 
 #   densidadosea
         label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE0, bg="#CCCCFF", fg="black", width=30, height=2)
@@ -121,7 +121,8 @@ class ActualizarRegistroNuevo(tk.Frame):
         entrada_tscore = tk.Entry(self, font=FUENTE0, width=9, bg="white")
         entrada_tscore.grid(row=3,column=2)
 
-
+        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2)
+        button.grid(row=4,column=1)
 
 
 
