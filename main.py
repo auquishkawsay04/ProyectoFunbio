@@ -1,18 +1,18 @@
 import tkinter as tk
 #from tkinter import ttk
 
-FUENTE0 = ("Simplex_IV50", 18)
-FUENTE1 = ("Simplex_IV50", 20)
-FUENTE2 = ("Simplex_IV50", 25)
-FUENTE3 = ("Simplex_IV50", 30)
-FUENTE4 = ("Simplex_IV50", 35)
-FUENTE5 = ("Simplex_IV50", 40)
-FUENTE6 = ("Simplex_IV50", 45)
-FUENTE7 = ("Simplex_IV50", 50)
-FUENTE8 = ("Simplex_IV50", 55)
-FUENTE9 = ("Simplex_IV50", 60)
-FUENTE10 = ("Simplex_IV50", 65)
-FUENTE11 = ("Simplex_IV50", 70)
+FUENTE0 = ("SF Pro Display", 16)
+FUENTE1 = ("SF Pro Display", 20)
+FUENTE2 = ("SF Pro Display", 25)
+FUENTE3 = ("SF Pro Display", 30)
+FUENTE4 = ("SF Pro Display", 35)
+FUENTE5 = ("SF Pro Display", 40)
+FUENTE6 = ("SF Pro Display", 45)
+FUENTE7 = ("SF Pro Display", 50)
+FUENTE8 = ("SF Pro Display", 55)
+FUENTE9 = ("SF Pro Display", 60)
+FUENTE10 = ("SF Pro Display", 65)
+FUENTE11 = ("SF Pro Display", 70)
 
 class AuquishApp(tk.Tk):
 
@@ -84,7 +84,7 @@ class Ramas(tk.Frame):
         tk.Frame.__init__(self, parent, background="#a281cc")
 
         button1 = tk.Button(self, text="PACIENTES REGISTRADOS", font=FUENTE3, relief="groove",
-                            borderwidth=2, width=30, height=1, command=lambda: controller.show_frame(BuscadorDNI))
+                            borderwidth=2, width=80, height=1, command=lambda: controller.show_frame(BuscadorDNI))
         button1.place(x=240, y=200)
 
         button2 = tk.Button(self, text="REGISTRAR UN NUEVO PACIENTE", font=FUENTE3, relief="groove",
@@ -95,23 +95,33 @@ class ActualizarRegistroNuevo(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
+#   titulo
+        label = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE1, bg="#c2deb5", fg="black", width=100, height=2,relief="groove")
+        label.place(x=0, y=0)
 
-        label = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE1, bg="#c2deb5", fg="black", width=60, height=2,relief="groove")
-        label.place(x=95, y=50)
+#   densidadosea
+        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE0, bg="#CCCCFF", fg="black", width=30, height=2)
+        label1.place(x=35, y=128)
 
-        label1 = tk.Label(self, text="T.Score:", font=FUENTE0, bg="#CCCCFF", fg="black", width=10,
-                         height=2)
-        label1.place(x=99, y=150)
+        entrada_densidad = tk.Entry(self, font=FUENTE0, width=9, bg="white")
+        entrada_densidad.place(x=440, y=143)
 
-        entry1 = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entry1.place(x=237, y=165)
+ #   IMC
+        label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE0, bg="#CCCCFF", fg="black", width=30,height=2)
+        label2.place(x=0, y=0)
 
-        label2 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE0, bg="#CCCCFF", fg="black", width=30,
-                          height=2)
-        label2.place(x=99, y=200)
+        entrada_imc = tk.Entry(self, font=FUENTE0, width=9, bg="white")
+        entrada_imc.place(x=0, y=0)
 
-        entry2 = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entry2.place(x=237, y=200)
+
+#   tscore
+        label3 = tk.Label(self, text="T.Score:", font=FUENTE0, bg="#CCCCFF", fg="black", width=10, height=2)
+        label3.place(x=0, y=0)
+
+        entrada_tscore = tk.Entry(self, font=FUENTE0, width=9, bg="white")
+        entrada_tscore.place(x=0, y=0)
+
+
 
 
 
