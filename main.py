@@ -96,30 +96,30 @@ class ActualizarRegistroNuevo(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 #   titulo
-        label = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE1, bg="#c2deb5", fg="black", width=100, height=2,relief="groove")
-        label.place(x=0, y=0)
+        label12 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE1, bg="#c2deb5", fg="black",relief="groove")
+        label12.grid(row=0,column=0)
 
 #   densidadosea
         label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE0, bg="#CCCCFF", fg="black", width=30, height=2)
-        label1.place(x=35, y=128)
+        label1.grid(row=1,column=1)
 
         entrada_densidad = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entrada_densidad.place(x=440, y=143)
+        entrada_densidad.grid(row=1,column=2)
 
  #   IMC
         label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE0, bg="#CCCCFF", fg="black", width=30,height=2)
-        label2.place(x=0, y=0)
+        label2.grid(row=2, column=1)
 
         entrada_imc = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entrada_imc.place(x=0, y=0)
+        entrada_imc.grid(row=2,column=2)
 
 
 #   tscore
         label3 = tk.Label(self, text="T.Score:", font=FUENTE0, bg="#CCCCFF", fg="black", width=10, height=2)
-        label3.place(x=0, y=0)
+        label3.grid(row=3,column=1)
 
         entrada_tscore = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entrada_tscore.place(x=0, y=0)
+        entrada_tscore.grid(row=3,column=2)
 
 
 
