@@ -1,18 +1,18 @@
 import tkinter as tk
 #from tkinter import ttk
 
-FUENTE0 = ("SF Pro Display", 16)
-FUENTE1 = ("SF Pro Display", 20)
-FUENTE2 = ("SF Pro Display", 25)
-FUENTE3 = ("SF Pro Display", 30)
-FUENTE4 = ("SF Pro Display", 35)
-FUENTE5 = ("SF Pro Display", 40)
-FUENTE6 = ("SF Pro Display", 45)
-FUENTE7 = ("SF Pro Display", 50)
-FUENTE8 = ("SF Pro Display", 55)
-FUENTE9 = ("SF Pro Display", 60)
-FUENTE10 = ("SF Pro Display", 65)
-FUENTE11 = ("SF Pro Display", 70)
+FUENTE0 = ("SF Pro Display", 10)
+FUENTE1 = ("SF Pro Display", 15)
+FUENTE2 = ("SF Pro Display", 20)
+FUENTE3 = ("SF Pro Display", 25)
+FUENTE4 = ("SF Pro Display", 30)
+FUENTE5 = ("SF Pro Display", 35)
+FUENTE6 = ("SF Pro Display", 40)
+FUENTE7 = ("SF Pro Display", 45)
+FUENTE8 = ("SF Pro Display", 50)
+FUENTE9 = ("SF Pro Display", 55)
+FUENTE10 = ("SF Pro Display", 60)
+FUENTE11 = ("SF Pro Display", 65)
 
 class AuquishApp(tk.Tk):
 
