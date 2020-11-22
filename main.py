@@ -13,7 +13,7 @@ FUENTE8 = ("SF Pro Display", 50)
 FUENTE9 = ("SF Pro Display", 55)
 FUENTE10 = ("SF Pro Display", 60)
 FUENTE11 = ("SF Pro Display", 65)
-
+#jhhhvuvbiibi
 class AuquishApp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
