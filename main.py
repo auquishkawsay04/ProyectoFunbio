@@ -94,33 +94,33 @@ class ActualizarRegistroNuevo(tk.Frame):
         label2 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
         label2.grid(row=1, column=1, columnspan=6, ipadx=180)
 # columnas
-        columna0 = tk.Label(self, bg="white")
+        columna0 = tk.Label(self, bg="#CCCCFF")
         columna0.grid(row=0, column=0,ipadx=80)
 
-        columna1 = tk.Label(self, bg="yellow")
+        columna1 = tk.Label(self, bg="#CCCCFF")
         columna1.grid(row=0, column=1,ipadx=80)
 
-        columna2 = tk.Label(self, bg="red")
+        columna2 = tk.Label(self, bg="#CCCCFF")
         columna2.grid(row=0, column=2, ipadx=80)
 
-        columna3 = tk.Label(self, bg="green")
+        columna3 = tk.Label(self, bg="#CCCCFF")
         columna3.grid(row=0, column=3, ipadx=80)
 
-        columna4 = tk.Label(self, bg="orange")
+        columna4 = tk.Label(self, bg="#CCCCFF")
         columna4.grid(row=0, column=4,ipadx=80)
 
-        columna5 = tk.Label(self, bg="purple")
+        columna5 = tk.Label(self, bg="#CCCCFF")
         columna5.grid(row=0, column=5,ipadx=80)
 
-        columna6 = tk.Label(self, bg="gray")
+        columna6 = tk.Label(self, bg="#CCCCFF")
         columna6.grid(row=0, column=6,ipadx=80)
 
-        columna7 = tk.Label(self, bg="brown")
+        columna7 = tk.Label(self, bg="#CCCCFF")
         columna7.grid(row=0, column=7,ipadx=80, ipady=10)
 
 #separacion titulo y densidad
         fila2 = tk.Label(self, bg="#CCCCFF")
-        fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=20)
+        fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=8)
 # densidadosea
         label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
         label1.grid(row=3,column=1, padx=50, columnspan=3,sticky="e")
@@ -129,7 +129,7 @@ class ActualizarRegistroNuevo(tk.Frame):
         entrada_densidad.grid(row=3,column=4, columnspan=2, sticky="w")
 # separacion titulo y densidad
         fila4 = tk.Label(self, bg="#CCCCFF")
-        fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=20)
+        fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=8)
 #  #   IMC
         label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black",height=2)
         label2.grid(row=5, column=1, padx=50, columnspan=3,sticky="e")
@@ -138,7 +138,7 @@ class ActualizarRegistroNuevo(tk.Frame):
         entrada_imc.grid(row=5,column=4, columnspan=2, sticky="w")
 # separacion
         fila7 = tk.Label(self, bg="#CCCCFF")
-        fila7.grid(row=7, column=3, columnspan=2, sticky="nsew", ipady=20)
+        fila7.grid(row=7, column=3, columnspan=2, sticky="nsew", ipady=8)
 # #   tscore
         label2 = tk.Label(self, text="T-Score:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
         label2.grid(row=8, column=1, padx=50, columnspan=3, sticky="e")
@@ -148,23 +148,26 @@ class ActualizarRegistroNuevo(tk.Frame):
 
 # separacion
         fila9 = tk.Label(self, bg="#CCCCFF")
-        fila9.grid(row=9, column=3, columnspan=2, sticky="nsew", ipady=20)
+        fila9.grid(row=9, column=3, columnspan=2, sticky="nsew", ipady=8)
 
-# #   boton resultados
-#         button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2)
-#         button.grid(row=4,column=1)
-
+#comentario
         label3 = tk.Label(self, text="Comentario:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
         label3.grid(row=10, column=1, padx=50, columnspan=3, sticky="e")
 
+        textComentarios = tk.Text(self, font=FUENTE1, width=23, height=5, bg="#CCCCFF")
+        textComentarios.grid(row=10, column=4,columnspan=3, sticky="w")
 
-        textComentarios = tk.Text(self, font=FUENTE1, width=20, height=5, bg="#CCCCFF")
-        textComentarios.grid(row=10, column=4,columnspan=2, sticky="w")
+# separacion
+        fila11 = tk.Label(self, bg="#CCCCFF")
+        fila11.grid(row=11, column=3, columnspan=2, sticky="nsew", ipady=20)
 
-        scrollYComentarios = tk.Scrollbar(self, command=textComentarios.yview)
-        scrollYComentarios.grid(row=10, column=5, sticky="nse", padx=53)
+#BOTONENTER
+        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2, bg="#75a7d9")
+        button.grid(row=12, column=4, columnspan=3, ipadx=40)
 
-        textComentarios.config(yscrollcommand=scrollYComentarios.set)
+# separacion
+        fila11 = tk.Label(self, bg="#CCCCFF")
+        fila11.grid(row=13, column=3, columnspan=2, sticky="nsew", ipady=20)
 
 
 class MostradorResultados(tk.Frame):
