@@ -243,17 +243,17 @@ class BuscadorDNI(tk.Frame):
                 paciente_id.set("")
 
 #estoy teniendo problemas con el self dice que eno esta definido
-    label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
-    label.place(x=190, y=150)
+        label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
+        label.place(x=190, y=150)
 
-    paciente_id = tk.StringVar()
-    entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
-    entry.focus_set()
-    entry.place(x=400, y=320)
+        paciente_id = tk.StringVar()
+        entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
+        entry.focus_set()
+        entry.place(x=400, y=320)
 
-    button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
-                       font=FUENTE3, command=verficar_id)
-    button.place(x=460, y=500)
+        button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
+                           font=FUENTE3, command=verficar_id)
+        button.place(x=460, y=500)
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
@@ -263,7 +263,7 @@ class HistoriaPacienteAntiguo(tk.Frame):
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-            label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
         label.place(x=200, y=220)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
