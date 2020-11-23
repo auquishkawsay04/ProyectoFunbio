@@ -100,13 +100,13 @@ class ActualizarRegistroNuevo(tk.Frame):
         derecha = tk.Label(self, bg="white")
         derecha.grid(row=0, column=4, sticky="e", padx=130)
 
-# #   densidadosea
-#         label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="#CCCCFF", fg="black", width=30, height=2)
-#         label1.grid(row=1,column=1)
-#
-#         entrada_densidad = tk.Entry(self, font=FUENTE1, width=9, bg="white")
-#         entrada_densidad.grid(row=1,column=2)
-#
+ #   densidadosea
+        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="white", fg="black", width=30, height=2)
+        label1.grid(row=1,column=0, padx=50)
+
+        entrada_densidad = tk.Entry(self, font=FUENTE1, width=9, bg="white")
+        entrada_densidad.grid(row=1,column=1)
+
 #  #   IMC
 #         label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black", width=30,height=2)
 #         label2.grid(row=2, column=1)
