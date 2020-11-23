@@ -136,18 +136,35 @@ class ActualizarRegistroNuevo(tk.Frame):
 
         entrada_imc = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
         entrada_imc.grid(row=5,column=4, columnspan=2, sticky="w")
-#
-#
+# separacion
+        fila7 = tk.Label(self, bg="#CCCCFF")
+        fila7.grid(row=7, column=3, columnspan=2, sticky="nsew", ipady=20)
 # #   tscore
-#         label3 = tk.Label(self, text="T.Score:", font=FUENTE1, bg="#CCCCFF", fg="black", width=10, height=2)
-#         label3.grid(row=3,column=1)
-#
-#         entrada_tscore = tk.Entry(self, font=FUENTE1, width=9, bg="white")
-#         entrada_tscore.grid(row=3,column=2)
-#
+        label2 = tk.Label(self, text="T-Score:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
+        label2.grid(row=8, column=1, padx=50, columnspan=3, sticky="e")
+
+        entrada_tscore = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
+        entrada_tscore.grid(row=8, column=4, columnspan=2, sticky="w")
+
+# separacion
+        fila9 = tk.Label(self, bg="#CCCCFF")
+        fila9.grid(row=9, column=3, columnspan=2, sticky="nsew", ipady=20)
+
 # #   boton resultados
 #         button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2)
 #         button.grid(row=4,column=1)
+
+        label3 = tk.Label(self, text="Comentario:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
+        label3.grid(row=10, column=1, padx=50, columnspan=3, sticky="e")
+
+
+        textComentarios = tk.Text(self, font=FUENTE1, width=20, height=5, bg="#CCCCFF")
+        textComentarios.grid(row=10, column=4,columnspan=2, sticky="w")
+
+        scrollYComentarios = tk.Scrollbar(self, command=textComentarios.yview)
+        scrollYComentarios.grid(row=10, column=5, sticky="nse", padx=53)
+
+        textComentarios.config(yscrollcommand=scrollYComentarios.set)
 
 
 class MostradorResultados(tk.Frame):
