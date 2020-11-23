@@ -91,21 +91,38 @@ class ActualizarRegistroNuevo(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 #   titulo
-        label12 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
-        label12.grid(row=0, column=1, columnspan=3, pady=35, padx=90, ipadx=30, sticky="nsew")
+        label2 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
+        label2.grid(row=1, column=1, columnspan=6, ipadx=180)
 
-        izquierda = tk.Label(self, bg="white")
-        izquierda.grid(row=0, column=0, sticky="w", padx=130)
+        columna0 = tk.Label(self, bg="white")
+        columna0.grid(row=0, column=0,ipadx=80)
 
-        derecha = tk.Label(self, bg="white")
-        derecha.grid(row=0, column=4, sticky="e", padx=130)
+        columna1 = tk.Label(self, bg="yellow")
+        columna1.grid(row=0, column=1,ipadx=80)
 
+        columna2 = tk.Label(self, bg="red")
+        columna2.grid(row=0, column=2, ipadx=80)
+
+        columna3 = tk.Label(self, bg="green")
+        columna3.grid(row=0, column=3, ipadx=80)
+
+        columna4 = tk.Label(self, bg="orange")
+        columna4.grid(row=0, column=4,ipadx=80)
+
+        columna5 = tk.Label(self, bg="purple")
+        columna5.grid(row=0, column=5,ipadx=80)
+
+        columna6 = tk.Label(self, bg="gray")
+        columna6.grid(row=0, column=6,ipadx=80)
+
+        columna7 = tk.Label(self, bg="brown")
+        columna7.grid(row=0, column=7,ipadx=80)
  #   densidadosea
-        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="white", fg="black", width=30, height=2)
-        label1.grid(row=1,column=0, padx=50)
+     #   label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="white", fg="black", width=30, height=2)
+      #  label1.grid(row=1,column=0, padx=50)
 
-        entrada_densidad = tk.Entry(self, font=FUENTE1, width=9, bg="white")
-        entrada_densidad.grid(row=1,column=1)
+       # entrada_densidad = tk.Entry(self, font=FUENTE1, width=9, bg="white")
+        #entrada_densidad.grid(row=1,column=1)
 
 #  #   IMC
 #         label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black", width=30,height=2)
@@ -307,5 +324,5 @@ class RegistrarNuevoPaciente(tk.Frame):
 
 app = AuquishApp()
 #app.geometry("1150x720")
-app.resizable(False, False)
+app.resizable(True, True)
 app.mainloop()
