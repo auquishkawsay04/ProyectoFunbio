@@ -241,17 +241,17 @@ class BuscadorDNI(tk.Frame):
                 #debemos ingresar la pagina del paciente regitrado aqui
                 controller.show_frame(HistoriaPacienteAntiguo)
                 paciente_id.set("")
-
-    label = ttk.Label(self, text="Ingrese el DNI del paciente", font=LARGE_FONT, background="white")
+#estoy teniendo problemas con el self dice que eno esta definido
+    label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
     label.place(x=190, y=150)
 
     paciente_id = tk.StringVar()
-    entry = tk.Entry(self, textvariable=paciente_id, font=LARGE_FONT, width=10, bg="white")
+    entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
     entry.focus_set()
     entry.place(x=400, y=320)
 
     button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
-                       font=SMALL_FONT, command=verficar_id)
+                       font=FUENTE3, command=verficar_id)
     button.place(x=460, y=500)
 
 class HistoriaPacienteAntiguo(tk.Frame):
@@ -262,12 +262,12 @@ class HistoriaPacienteAntiguo(tk.Frame):
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+            label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
         label.place(x=200, y=220)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
-        button1 = tk.Button(self, text="Actualizar", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
+        button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
         button1.place(x=240, y=200)
 
 class RegistrarNuevoPaciente(tk.Frame):
