@@ -93,7 +93,7 @@ class ActualizarRegistroNuevo(tk.Frame):
 #   titulo
         label2 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
         label2.grid(row=1, column=1, columnspan=6, ipadx=180)
-
+# columnas
         columna0 = tk.Label(self, bg="white")
         columna0.grid(row=0, column=0,ipadx=80)
 
@@ -116,20 +116,26 @@ class ActualizarRegistroNuevo(tk.Frame):
         columna6.grid(row=0, column=6,ipadx=80)
 
         columna7 = tk.Label(self, bg="brown")
-        columna7.grid(row=0, column=7,ipadx=80)
- #   densidadosea
-     #   label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="white", fg="black", width=30, height=2)
-      #  label1.grid(row=1,column=0, padx=50)
+        columna7.grid(row=0, column=7,ipadx=80, ipady=10)
 
-       # entrada_densidad = tk.Entry(self, font=FUENTE1, width=9, bg="white")
-        #entrada_densidad.grid(row=1,column=1)
+#separacion titulo y densidad
+        fila2 = tk.Label(self, bg="#CCCCFF")
+        fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=20)
+# densidadosea
+        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
+        label1.grid(row=3,column=1, padx=50, columnspan=3,sticky="e")
 
+        entrada_densidad = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
+        entrada_densidad.grid(row=3,column=4, columnspan=2, sticky="w")
+# separacion titulo y densidad
+        fila4 = tk.Label(self, bg="#CCCCFF")
+        fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=20)
 #  #   IMC
-#         label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black", width=30,height=2)
-#         label2.grid(row=2, column=1)
-#
-#         entrada_imc = tk.Entry(self, font=FUENTE1, width=9, bg="white")
-#         entrada_imc.grid(row=2,column=2)
+        label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black",height=2)
+        label2.grid(row=5, column=1, padx=50, columnspan=3,sticky="e")
+
+        entrada_imc = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
+        entrada_imc.grid(row=5,column=4, columnspan=2, sticky="w")
 #
 #
 # #   tscore
