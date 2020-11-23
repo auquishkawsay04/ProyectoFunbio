@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(Ramas)
+        self.show_frame(ActualizarRegistroNuevo)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -306,6 +306,6 @@ class RegistrarNuevoPaciente(tk.Frame):
 
 
 app = AuquishApp()
-app.geometry("1150x720")
+#app.geometry("1150x720")
 app.resizable(False, False)
 app.mainloop()
