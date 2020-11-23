@@ -235,11 +235,25 @@ class BuscadorDNI(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, bg="white")
 
-        tk.Frame.__init__(self, parent, background="#a281cc")
+        def verficar_id():
+            if paciente_id.get() == "74124434":
 
-        button1 = tk.Button(self, text="PACIENTES REGISTRADOS", font=FUENTE3, relief="groove",
-                            borderwidth=2, width=30, height=1)
-        button1.place(x=240, y=200)
+                #debemos ingresar la pagina del paciente regitrado aqui
+                controller.show_frame(HistoriaPacienteAntiguo)
+                paciente_id.set("")
+
+#estoy teniendo problemas con el self dice que eno esta definido
+    label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
+    label.place(x=190, y=150)
+
+    paciente_id = tk.StringVar()
+    entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
+    entry.focus_set()
+    entry.place(x=400, y=320)
+
+    button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
+                       font=FUENTE3, command=verficar_id)
+    button.place(x=460, y=500)
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
@@ -249,11 +263,13 @@ class HistoriaPacienteAntiguo(tk.Frame):
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+            label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
         label.place(x=200, y=220)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
+        button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
+        button1.place(x=140, y=400)
 
 class RegistrarNuevoPaciente(tk.Frame):
 
@@ -263,11 +279,29 @@ class RegistrarNuevoPaciente(tk.Frame):
         label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Nombres y apellidos del nuevo paciente"    , font=FUENTE3, background="white")
         label.place(x=200, y=220)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
+
+        label = tk.Label(self, text="DNI" , font=FUENTE3, background="white")
+        label.place(x=200, y=320)
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.place(x=320, y=320)
+
+        label = tk.Label(self, text="Edad" , font=FUENTE3, background="white")
+        label.place(x=400, y=320)
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.place(x=520, y=220)
+
+        label = tk.Label(self, text="Fecha de nacimiento", font=FUENTE3, background="white")
+        label.place(x=600, y=320)
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.place(x=720, y=220)
 
 
 
