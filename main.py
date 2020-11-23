@@ -279,11 +279,29 @@ class RegistrarNuevoPaciente(tk.Frame):
         label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Nombres y apellidos del nuevo paciente"    , font=FUENTE3, background="white")
         label.place(x=200, y=220)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
+
+        label = tk.Label(self, text="DNI" , font=FUENTE3, background="white")
+        label.place(x=200, y=320)
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.place(x=320, y=320)
+
+        label = tk.Label(self, text="Edad" , font=FUENTE3, background="white")
+        label.place(x=400, y=320)
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.place(x=520, y=220)
+
+        label = tk.Label(self, text="Fecha de nacimiento", font=FUENTE3, background="white")
+        label.place(x=600, y=320)
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.place(x=720, y=220)
 
 
 
