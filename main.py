@@ -13,7 +13,7 @@ FUENTE8 = ("SF Pro Display", 50)
 FUENTE9 = ("SF Pro Display", 55)
 FUENTE10 = ("SF Pro Display", 60)
 FUENTE11 = ("SF Pro Display", 65)
-#jhhhvuvbiibi
+
 class AuquishApp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
@@ -57,7 +57,7 @@ class Login(tk.Frame):
             else:
                 incorrect_password_label["text"] = "La contraseña que ingresó es incorrecta. Inténtelo de nuevo"
 
-        label = tk.Label(self, text="TENDOUX", font=FUENTE4, bg="#CCCCFF")
+        label = tk.Label(self, text="TENDOUX", font=FUENTE7, bg="#CCCCFF")
         label.pack(pady=75, padx=40)
 
         password_label = tk.Label(self, text="Ingrese su contraseña", bg="#CCCCFF", fg="black", font=FUENTE1)
@@ -78,51 +78,53 @@ class Login(tk.Frame):
 class Ramas(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#a281cc")
+        tk.Frame.__init__(self, parent, background="#CCCCFF")
 
-#   pacientesRegistrados
-        button1 = tk.Button(self, text="PACIENTES REGISTRADOS", font=FUENTE3, relief="groove",
-                            borderwidth=2, command=lambda: controller.show_frame(BuscadorDNI))
-        button1.grid(row=1, column=1)
+        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#1168bf",fg="white", width=30, height=2)
+        Boton1.grid(row=2, column=2, pady=160, padx=180)
 
-#   nuevosPacientes
-        button2 = tk.Button(self, text="REGISTRAR UN NUEVO PACIENTE", font=FUENTE3, relief="groove",
-                            borderwidth=2, command=lambda: controller.show_frame(RegistrarNuevoPaciente))
-        button2.grid(row=2, column=1)
+        Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#1168bf", fg="white", width=30, height=2)
+        Boton2.grid(row=3, column=2, padx=10)
 
 class ActualizarRegistroNuevo(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 #   titulo
-        label12 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE1, bg="#c2deb5", fg="black",relief="groove")
-        label12.grid(row=0,column=1)
+        label12 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
+        label12.grid(row=0, column=1, columnspan=3, pady=35, padx=90, ipadx=30, sticky="nsew")
 
-#   densidadosea
-        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE0, bg="#CCCCFF", fg="black", width=30, height=2)
-        label1.grid(row=1,column=1)
+        izquierda = tk.Label(self, bg="white")
+        izquierda.grid(row=0, column=0, sticky="w", padx=130)
 
-        entrada_densidad = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entrada_densidad.grid(row=1,column=2)
+        derecha = tk.Label(self, bg="white")
+        derecha.grid(row=0, column=4, sticky="e", padx=130)
 
- #   IMC
-        label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE0, bg="#CCCCFF", fg="black", width=30,height=2)
-        label2.grid(row=2, column=1)
-
-        entrada_imc = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entrada_imc.grid(row=2,column=2)
-
-
-#   tscore
-        label3 = tk.Label(self, text="T.Score:", font=FUENTE0, bg="#CCCCFF", fg="black", width=10, height=2)
-        label3.grid(row=3,column=1)
-
-        entrada_tscore = tk.Entry(self, font=FUENTE0, width=9, bg="white")
-        entrada_tscore.grid(row=3,column=2)
-
-#   boton resultados
-        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2)
-        button.grid(row=4,column=1)
+# #   densidadosea
+#         label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="#CCCCFF", fg="black", width=30, height=2)
+#         label1.grid(row=1,column=1)
+#
+#         entrada_densidad = tk.Entry(self, font=FUENTE1, width=9, bg="white")
+#         entrada_densidad.grid(row=1,column=2)
+#
+#  #   IMC
+#         label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black", width=30,height=2)
+#         label2.grid(row=2, column=1)
+#
+#         entrada_imc = tk.Entry(self, font=FUENTE1, width=9, bg="white")
+#         entrada_imc.grid(row=2,column=2)
+#
+#
+# #   tscore
+#         label3 = tk.Label(self, text="T.Score:", font=FUENTE1, bg="#CCCCFF", fg="black", width=10, height=2)
+#         label3.grid(row=3,column=1)
+#
+#         entrada_tscore = tk.Entry(self, font=FUENTE1, width=9, bg="white")
+#         entrada_tscore.grid(row=3,column=2)
+#
+# #   boton resultados
+#         button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2)
+#         button.grid(row=4,column=1)
 
 
 class MostradorResultados(tk.Frame):
@@ -150,8 +152,6 @@ class MostradorResultados(tk.Frame):
 #   boton imprimir resultados
         button = tk.Button(self, text="Imprimir resultados", font=FUENTE1, relief="groove", borderwidth=2)
         button.grid(row=5,column=3)
-
-
 
 
 
