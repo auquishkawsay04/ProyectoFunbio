@@ -241,6 +241,7 @@ class BuscadorDNI(tk.Frame):
                 #debemos ingresar la pagina del paciente regitrado aqui
                 controller.show_frame(HistoriaPacienteAntiguo)
                 paciente_id.set("")
+
 #estoy teniendo problemas con el self dice que eno esta definido
     label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
     label.place(x=190, y=150)
@@ -268,7 +269,7 @@ class HistoriaPacienteAntiguo(tk.Frame):
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
         button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
-        button1.place(x=240, y=200)
+        button1.place(x=140, y=400)
 
 class RegistrarNuevoPaciente(tk.Frame):
 
