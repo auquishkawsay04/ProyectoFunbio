@@ -1,5 +1,5 @@
 import tkinter as tk
-#from tkinter import ttk
+from tkinter import ttk
 
 FUENTE0 = ("SF Pro Display", 10)
 FUENTE1 = ("SF Pro Display", 15)
@@ -282,18 +282,18 @@ class MostradorResultados(tk.Frame):
         button.grid(row=9,column=5, columnspan=3, ipadx=10)
 
 
-class Pantalla(tk.Frame):
 
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#CCCCFF")
 
-        # etiqueta1
-        label2 = tk.Label(self, text="titulo", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
-        label2.grid(row=2, column=28, ipadx=180)
 
-        #etiqueta2
-        label3 = tk.Label(self, text="titulo2", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
-        label3.grid(row=3, column=29, ipadx=180)
+
+
+
+
+
+
+
+
+
 
 
 
