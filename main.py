@@ -313,7 +313,7 @@ class MostradorResultados(tk.Frame):
 class BuscadorDNI(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="white")
+        tk.Frame.__init__(self, parent, bg="#CCCCFF")
 #probando nuevo identificador de DNI
 
         def verficar_id():
@@ -322,11 +322,11 @@ class BuscadorDNI(tk.Frame):
 
                 #debemos ingresar la pagina del paciente regitrado aqui
                 controller.show_frame(HistoriaPacienteAntiguo)
-                incorrect_password_label["text"] = ""
+                incorrect_id_label["text"] = ""
                 paciente_id.set("")
 
             else:
-                incorrect_password_label["text"] = "No se ha encontrado el paciente"
+                incorrect_id_label["text"] = "No se ha encontrado el paciente"
 
 #estoy teniendo problemas con el self dice que eno esta definido
         label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
@@ -337,8 +337,7 @@ class BuscadorDNI(tk.Frame):
         entry.focus_set()
         entry.place(x=518, y=320)
 
-        button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
-                           font=FUENTE3, command=verficar_id)
+        button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,font=FUENTE3, command=verficar_id)
         button.place(x=460, y=500)
 
 
