@@ -29,7 +29,7 @@ class AuquishApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (Login, Ramas, ActualizarRegistroNuevo, MostradorResultados, BuscadorDNI, HistoriaPacienteAntiguo, RegistrarNuevoPaciente, Pantalla):
+        for F in (Login, Ramas, ActualizarRegistroNuevo, MostradorResultados, BuscadorDNI, HistoriaPacienteAntiguo, RegistrarNuevoPaciente):
             frame = F(container, self)
 
             self.frames[F] = frame
