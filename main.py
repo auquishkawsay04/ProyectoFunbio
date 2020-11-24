@@ -329,16 +329,16 @@ class BuscadorDNI(tk.Frame):
                 incorrect_id_label["text"] = "No se ha encontrado el paciente"
 
 #estoy teniendo problemas con el self dice que eno esta definido
-        label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Ingrese el DNI del paciente", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
         paciente_id = tk.StringVar()
         entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
         entry.focus_set()
-        entry.place(x=518, y=320)
+        entry.place(x=418, y=340)
 
         button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,font=FUENTE3, command=verficar_id)
-        button.place(x=460, y=500)
+        button.place(x=700, y=340)
 
 
 
