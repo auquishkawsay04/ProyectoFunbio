@@ -29,14 +29,14 @@ class AuquishApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (Login, Ramas, ActualizarRegistroNuevo, MostradorResultados, BuscadorDNI, HistoriaPacienteAntiguo, RegistrarNuevoPaciente):
+        for F in (Login, Ramas, ActualizarRegistroNuevo, MostradorResultados, BuscadorDNI, HistoriaPacienteAntiguo, RegistrarNuevoPaciente, Pantalla):
             frame = F(container, self)
 
             self.frames[F] = frame
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(BuscadorDNI)
+        self.show_frame(Login)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -282,18 +282,18 @@ class MostradorResultados(tk.Frame):
         button.grid(row=9,column=5, columnspan=3, ipadx=10)
 
 
+class Pantalla(tk.Frame):
 
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent, background="#CCCCFF")
 
+        # etiqueta1
+        label2 = tk.Label(self, text="titulo", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
+        label2.grid(row=2, column=28, ipadx=180)
 
-
-
-
-
-
-
-
-
-
+        #etiqueta2
+        label3 = tk.Label(self, text="titulo2", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
+        label3.grid(row=3, column=29, ipadx=180)
 
 
 
@@ -313,61 +313,48 @@ class MostradorResultados(tk.Frame):
 class BuscadorDNI(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="#CCCCFF")
-#probando nuevo identificador de DNI
+        tk.Frame.__init__(self, parent, bg="white")
 
         def verficar_id():
-            #aqui sera para agregar el DNI fake
             if paciente_id.get() == "74124434":
 
                 #debemos ingresar la pagina del paciente regitrado aqui
                 controller.show_frame(HistoriaPacienteAntiguo)
-                incorrect_id_label["text"] = ""
                 paciente_id.set("")
-#cuando trato de colocar el mensaje de error no sale nada en la pagina
-            else:
-                incorrect_id_label["text"] = "No se ha encontrado el paciente"
 
 #estoy teniendo problemas con el self dice que eno esta definido
-        label = tk.Label(self, text="Ingrese el DNI del paciente", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
         paciente_id = tk.StringVar()
-        entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE5, width=10, bg="white")
+        entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
         entry.focus_set()
-        entry.place(x=318, y=340)
+        entry.place(x=400, y=320)
 
-        button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,font=FUENTE3, command=verficar_id)
-        button.place(x=700, y=340)
-
-# incorrect_id_label = tk.Label(self, text=" ", bg="white", anchor="n", fg="black", font=FUENTE3)
-#incorrect_id_label.pack(fill="both", expand=True)
+        button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
+                           font=FUENTE3, command=verficar_id)
+        button.place(x=460, y=500)
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="#CCCCFF")
+        tk.Frame.__init__(self, parent, bg="white")
 
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="DATOS PERSONALES", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
         label.place(x=200, y=220)
-
-
-        label = tk.Label(self, text="DNI", font=FUENTE3, background="white")
-        label.place(x=100, y=230)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
-
         button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
         button1.place(x=140, y=400)
 
 class RegistrarNuevoPaciente(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="#CCCCFF")
+        tk.Frame.__init__(self, parent, bg="white")
 
         label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
         label.place(x=190, y=150)
