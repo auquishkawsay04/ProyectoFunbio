@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(MostradorResultados)
+        self.show_frame(BuscadorDNI)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -335,11 +335,13 @@ class BuscadorDNI(tk.Frame):
         paciente_id = tk.StringVar()
         entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
         entry.focus_set()
-        entry.place(x=400, y=320)
+        entry.place(x=518, y=320)
 
         button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
                            font=FUENTE3, command=verficar_id)
         button.place(x=460, y=500)
+
+
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
