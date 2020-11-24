@@ -316,6 +316,7 @@ class BuscadorDNI(tk.Frame):
         tk.Frame.__init__(self, parent, bg="white")
 
         def verficar_id():
+            #aqui sera para agregar el DNI fake
             if paciente_id.get() == "74124434":
 
                 #debemos ingresar la pagina del paciente regitrado aqui
@@ -343,11 +344,16 @@ class HistoriaPacienteAntiguo(tk.Frame):
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+        label = tk.Label(self, text="DATOS PERSONALES", font=FUENTE3, background="white")
+        label.place(x=200, y=220)
+
+
+        label = tk.Label(self, text="DNI", font=FUENTE3, background="white")
         label.place(x=200, y=220)
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         entry.place(x=320, y=220)
+
         button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
         button1.place(x=140, y=400)
 
