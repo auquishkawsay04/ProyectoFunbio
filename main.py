@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+
 
 FUENTE0 = ("SF Pro Display", 10)
 FUENTE1 = ("SF Pro Display", 15)
