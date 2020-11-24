@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(Ramas)
+        self.show_frame(MostradorResultados)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -81,35 +81,41 @@ class Ramas(tk.Frame):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 
         # columnas
-        columna0 = tk.Label(self, bg="yellow")
+        columna0 = tk.Label(self, bg="#CCCCFF")
         columna0.grid(row=0, column=0, ipadx=80)
 
         columna1 = tk.Label(self, bg="#CCCCFF")
         columna1.grid(row=0, column=1, ipadx=80)
 
-        columna2 = tk.Label(self, bg="yellow")
+        columna2 = tk.Label(self, bg="#CCCCFF")
         columna2.grid(row=0, column=2, ipadx=80)
 
         columna3 = tk.Label(self, bg="#CCCCFF")
         columna3.grid(row=0, column=3, ipadx=80)
 
-        columna4 = tk.Label(self, bg="yellow")
+        columna4 = tk.Label(self, bg="#CCCCFF")
         columna4.grid(row=0, column=4, ipadx=80)
 
         columna5 = tk.Label(self, bg="#CCCCFF")
         columna5.grid(row=0, column=5, ipadx=80)
 
-        columna6 = tk.Label(self, bg="yellow")
+        columna6 = tk.Label(self, bg="#CCCCFF")
         columna6.grid(row=0, column=6, ipadx=80)
 
-        columna7 = tk.Label(self, bg="red")
+        columna7 = tk.Label(self, bg="#CCCCFF")
         columna7.grid(row=0, column=7, ipadx=80, ipady=10)
 
-        # separacion titulo y densidad
+#separacion titulo
+        fila1 = tk.Label(self, bg="#CCCCFF")
+        fila1.grid(row=1, column=3, columnspan=2, sticky="nsew", ipady=65)
 
         Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#1168bf",fg="white", width=30, height=1,
                            command=lambda: controller.show_frame(ActualizarRegistroNuevo))
         Boton1.grid(row=2, column=1, columnspan=5, sticky="w")
+
+# separacion titulo y densidad
+        fila2 = tk.Label(self, bg="#CCCCFF")
+        fila2.grid(row=3, column=3, columnspan=2, sticky="nsew", ipady=50)
 
         Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#1168bf", fg="white", width=30, height=1)
         Boton2.grid(row=4, column=1, columnspan=5, sticky="w")
@@ -190,7 +196,8 @@ class ActualizarRegistroNuevo(tk.Frame):
         fila11.grid(row=11, column=3, columnspan=2, sticky="nsew", ipady=20)
 
 #BOTONENTER
-        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=2, bg="#75a7d9")
+        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=3,
+                           bg="#1168bf", fg="white", command=lambda: controller.show_frame(Ramas))
         button.grid(row=12, column=4, columnspan=3, ipadx=40)
 
 # separacion
@@ -200,28 +207,79 @@ class ActualizarRegistroNuevo(tk.Frame):
 class MostradorResultados(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#a281cc")
+        tk.Frame.__init__(self, parent, background="#CCCCFF")
 #   titulo
-        labelM = tk.Label(self, text="Resultados del 04/12/19", font=FUENTE1, bg="#c2deb5", fg="black",relief="groove")
-        labelM.grid(row=0,column=1)
+        label2 = tk.Label(self, text="RESULTADOS DEL 04/12/19", font=FUENTE2, bg="#c2deb5", fg="black",
+                          relief="groove", height=2)
+        label2.grid(row=1, column=1, columnspan=6, ipadx=180)
+
+# columnas
+        columna0 = tk.Label(self, bg="#CCCCFF")
+        columna0.grid(row=0, column=0, ipadx=80)
+
+        columna1 = tk.Label(self, bg="#CCCCFF")
+        columna1.grid(row=0, column=1, ipadx=80)
+
+        columna2 = tk.Label(self, bg="#CCCCFF")
+        columna2.grid(row=0, column=2, ipadx=80)
+
+        columna3 = tk.Label(self, bg="#CCCCFF")
+        columna3.grid(row=0, column=3, ipadx=80)
+
+        columna4 = tk.Label(self, bg="#CCCCFF")
+        columna4.grid(row=0, column=4, ipadx=80)
+
+        columna5 = tk.Label(self, bg="#CCCCFF")
+        columna5.grid(row=0, column=5, ipadx=80)
+
+        columna6 = tk.Label(self, bg="#CCCCFF")
+        columna6.grid(row=0, column=6, ipadx=80)
+
+        columna7 = tk.Label(self, bg="#CCCCFF")
+        columna7.grid(row=0, column=7, ipadx=80, ipady=10)
+
+# separacion titulo y densidad
+        fila2 = tk.Label(self, bg="#CCCCFF")
+        fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=8)
+
 
 #   estadooseoactual
-        label1 = tk.Label(self, text="Estado óseo actual:", font=FUENTE1, bg="#a281cc")
-        label1.grid(row=1,column=2)
+        label1 = tk.Label(self, text="Estado óseo actual:", font=FUENTE1, bg="#CCCCFF")
+        label1.grid(row=3, column=1, padx=50, columnspan=3, sticky="e")
 
-        resultadoOseoDensitometria = tk.Label(self, text=" Osteoporosis Grave ", font=FUENTE0, bg="white")
-        resultadoOseoDensitometria.grid(row=2, column=2)
+        resultadoOseoDensitometria = tk.Label(self, text=" Osteoporosis Grave ", font=FUENTE1, bg="#CCCCFF")
+        resultadoOseoDensitometria.grid(row=3, column=4, columnspan=2, sticky="w")
+
+# separacion titulo y densidad
+        fila4 = tk.Label(self, bg="#CCCCFF")
+        fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=8)
 
 #   recomendaciones
-        label2 = tk.Label(self, text="Recomendaciones:", font=FUENTE1, bg="#a281cc")
-        label2.grid(row=3,column=2)
+        label2 = tk.Label(self, text="Recomendaciones generales:", font=FUENTE1, bg="#CCCCFF")
+        label2.grid(row=5, column=1, padx=50, columnspan=3, sticky="e")
+#
+        resultadoRecomendaciones = tk.Label(self, text="It is a long established fact that a reader", font=FUENTE1, bg="#CCCCFF")
+        resultadoRecomendaciones.grid(row=5, column=4, columnspan=6, sticky="w")
 
-        resultadoRecomendaciones = tk.Label(self, text=" Ir a la playa. ", font=FUENTE0, bg="white")
-        resultadoRecomendaciones.grid(row=4, column=2)
+# separacion titulo y densidad
+        fila6= tk.Label(self, bg="#CCCCFF")
+        fila6.grid(row=6, column=3, columnspan=2, sticky="nsew", ipady=8)
+
+#   recomendaciones
+        label3 = tk.Label(self, text="Comentario:", font=FUENTE1, bg="#CCCCFF")
+        label3.grid(row=7, column=1, padx=50, columnspan=3, sticky="e")
+#
+        resultadoComentario = tk.Label(self, text="It is a long established fact that a reader", font=FUENTE1, bg="#CCCCFF")
+        resultadoComentario.grid(row=7, column=4, columnspan=6, sticky="w")
+
+# separacion titulo y densidad
+        fila7 = tk.Label(self, bg="#CCCCFF")
+        fila7.grid(row=8, column=3, columnspan=2, sticky="nsew", ipady=70)
 
 #   boton imprimir resultados
-        button = tk.Button(self, text="Imprimir resultados", font=FUENTE1, relief="groove", borderwidth=2)
-        button.grid(row=5,column=3)
+        button = tk.Button(self, text="Imprimir resultados", font=FUENTE1, relief="groove", borderwidth=2,
+                           command=lambda: controller.show_frame(ActualizarRegistroNuevo))
+        button.grid(row=9,column=5, columnspan=3, ipadx=10)
 
 
 
@@ -247,8 +305,10 @@ class MostradorResultados(tk.Frame):
 
 
 
-# -----------------------------------FIN CODIGO DAVID LINEA 250------------------------------------------------------
-# -----------------------------------INICIO CODIGO NESTOR LINEA 251--------------------------------------------------
+
+
+# -----------------------------------FIN CODIGO DAVID LINEA 310------------------------------------------------------
+# -----------------------------------INICIO CODIGO NESTOR LINEA 211--------------------------------------------------
 
 class BuscadorDNI(tk.Frame):
 
