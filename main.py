@@ -367,7 +367,7 @@ class HistoriaPacienteAntiguo(tk.Frame):
 class RegistrarNuevoPaciente(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="white")
+        tk.Frame.__init__(self, parent, bg="#CCCCFF")
 
         label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
         label.place(x=190, y=150)
