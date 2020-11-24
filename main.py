@@ -324,7 +324,7 @@ class BuscadorDNI(tk.Frame):
                 controller.show_frame(HistoriaPacienteAntiguo)
                 incorrect_id_label["text"] = ""
                 paciente_id.set("")
-
+#cuando trato de colocar el mensaje de error no sale nada en la pagina
             else:
                 incorrect_id_label["text"] = "No se ha encontrado el paciente"
 
@@ -333,14 +333,15 @@ class BuscadorDNI(tk.Frame):
         label.place(x=190, y=150)
 
         paciente_id = tk.StringVar()
-        entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="white")
+        entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE5, width=10, bg="white")
         entry.focus_set()
-        entry.place(x=418, y=340)
+        entry.place(x=318, y=340)
 
         button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,font=FUENTE3, command=verficar_id)
         button.place(x=700, y=340)
 
-
+# incorrect_id_label = tk.Label(self, text=" ", bg="white", anchor="n", fg="black", font=FUENTE3)
+#incorrect_id_label.pack(fill="both", expand=True)
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
