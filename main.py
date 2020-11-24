@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(ActualizarRegistroNuevo)
+        self.show_frame(Ramas)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -80,11 +80,39 @@ class Ramas(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 
-        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#1168bf",fg="white", width=30, height=2)
-        Boton1.grid(row=2, column=2, pady=160, padx=180)
+        # columnas
+        columna0 = tk.Label(self, bg="yellow")
+        columna0.grid(row=0, column=0, ipadx=80)
 
-        Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#1168bf", fg="white", width=30, height=2)
-        Boton2.grid(row=3, column=2, padx=10)
+        columna1 = tk.Label(self, bg="#CCCCFF")
+        columna1.grid(row=0, column=1, ipadx=80)
+
+        columna2 = tk.Label(self, bg="yellow")
+        columna2.grid(row=0, column=2, ipadx=80)
+
+        columna3 = tk.Label(self, bg="#CCCCFF")
+        columna3.grid(row=0, column=3, ipadx=80)
+
+        columna4 = tk.Label(self, bg="yellow")
+        columna4.grid(row=0, column=4, ipadx=80)
+
+        columna5 = tk.Label(self, bg="#CCCCFF")
+        columna5.grid(row=0, column=5, ipadx=80)
+
+        columna6 = tk.Label(self, bg="yellow")
+        columna6.grid(row=0, column=6, ipadx=80)
+
+        columna7 = tk.Label(self, bg="red")
+        columna7.grid(row=0, column=7, ipadx=80, ipady=10)
+
+        # separacion titulo y densidad
+
+        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#1168bf",fg="white", width=30, height=1,
+                           command=lambda: controller.show_frame(ActualizarRegistroNuevo))
+        Boton1.grid(row=2, column=1, columnspan=5, sticky="w")
+
+        Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#1168bf", fg="white", width=30, height=1)
+        Boton2.grid(row=4, column=1, columnspan=5, sticky="w")
 
 class ActualizarRegistroNuevo(tk.Frame):
 
@@ -169,7 +197,6 @@ class ActualizarRegistroNuevo(tk.Frame):
         fila11 = tk.Label(self, bg="#CCCCFF")
         fila11.grid(row=13, column=3, columnspan=2, sticky="nsew", ipady=20)
 
-
 class MostradorResultados(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -220,58 +247,8 @@ class MostradorResultados(tk.Frame):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# -----------------------------------FIN CODIGO DAVID LINEA 230------------------------------------------------------
-# -----------------------------------INICIO CODIGO NESTOR LINEA 231--------------------------------------------------
+# -----------------------------------FIN CODIGO DAVID LINEA 250------------------------------------------------------
+# -----------------------------------INICIO CODIGO NESTOR LINEA 251--------------------------------------------------
 
 class BuscadorDNI(tk.Frame):
 
