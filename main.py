@@ -3,12 +3,12 @@ import tkinter as tk
 
 FUENTE0 = ("SF Pro Display", 10)
 FUENTE1 = ("SF Pro Display", 15)
-FUENTE2 = ("SF Pro Display", 20)
+FUENTE2 = ("Calibri", 20)
 FUENTE3 = ("SF Pro Display", 25)
 FUENTE4 = ("SF Pro Display", 30)
 FUENTE5 = ("SF Pro Display", 35)
 FUENTE6 = ("SF Pro Display", 40)
-FUENTE7 = ("SF Pro Display", 45)
+FUENTE7 = ("Simplex_IV50", 45)
 FUENTE8 = ("SF Pro Display", 50)
 FUENTE9 = ("SF Pro Display", 55)
 FUENTE10 = ("SF Pro Display", 60)
@@ -57,8 +57,8 @@ class Login(tk.Frame):
             else:
                 incorrect_password_label["text"] = "La contraseña que ingresó es incorrecta. Inténtelo de nuevo"
 
-        label = tk.Label(self, text="TENDOUX", font=FUENTE7, bg="#CCCCFF")
-        label.pack(pady=75, padx=40)
+        label = tk.Label(self, text="TENDOUX", font=FUENTE7, bg="white")
+        label.pack(pady=75, padx=40,ipadx=15)
 
         password_label = tk.Label(self, text="Ingrese su contraseña", bg="#CCCCFF", fg="black", font=FUENTE1)
         password_label.pack(ipady=10)
@@ -68,11 +68,11 @@ class Login(tk.Frame):
         password_entry_box.focus_set()
         password_entry_box.pack(ipady=7, pady=40)
 
-        enter_button = tk.Button(self, text="INGRESAR", command=verificar_contrasena, relief="groove",
+        enter_button = tk.Button(self, text="ACEPTAR", command=verificar_contrasena, relief="groove",
                                  borderwidth=0, width=15, height=1, font=FUENTE1, bg="#1168bf", fg="white")
         enter_button.pack(pady=40)
 
-        incorrect_password_label = tk.Label(self, text=" ", bg="#CCCCFF", anchor="n", fg="white", font=FUENTE1)
+        incorrect_password_label = tk.Label(self, text=" ", bg="#CCCCFF", anchor="n", fg="red", font=FUENTE1)
         incorrect_password_label.pack(fill="both", expand=True)
 
 class Ramas(tk.Frame):
@@ -109,7 +109,7 @@ class Ramas(tk.Frame):
         fila1 = tk.Label(self, bg="#CCCCFF")
         fila1.grid(row=1, column=3, columnspan=2, sticky="nsew", ipady=65)
 
-        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#1168bf",fg="white", width=30, height=1,
+        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#E7E6E6",fg="black", width=30, height=1,
                            command=lambda: controller.show_frame(ActualizarRegistroNuevo))
         Boton1.grid(row=2, column=1, columnspan=5, sticky="w")
 
@@ -117,7 +117,7 @@ class Ramas(tk.Frame):
         fila2 = tk.Label(self, bg="#CCCCFF")
         fila2.grid(row=3, column=3, columnspan=2, sticky="nsew", ipady=50)
 
-        Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#1168bf", fg="white", width=30, height=1)
+        Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#E7E6E6", fg="black", width=30, height=1)
         Boton2.grid(row=4, column=1, columnspan=5, sticky="w")
 
 class ActualizarRegistroNuevo(tk.Frame):
