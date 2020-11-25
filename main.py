@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(Login)
+        self.show_frame(login)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -354,34 +354,131 @@ class HistoriaPacienteAntiguo(tk.Frame):
 class RegistrarNuevoPaciente(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="white")
+        tk.Frame.__init__(self, parent, bg="pink")
+        # columnas
+        columna0 = tk.Label(self, bg="pink")
+        columna0.grid(row=0, column=0, ipadx=80)
 
-        label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
-        label.place(x=190, y=150)
+        columna1 = tk.Label(self, bg="pink")
+        columna1.grid(row=0, column=1, ipadx=80)
 
-        label = tk.Label(self, text="Nombres y apellidos del nuevo paciente"    , font=FUENTE3, background="white")
-        label.place(x=200, y=220)
+        columna2 = tk.Label(self, bg="pink")
+        columna2.grid(row=0, column=2, ipadx=80)
+
+        columna3 = tk.Label(self, bg="pink")
+        columna3.grid(row=0, column=3, ipadx=80)
+
+        columna4 = tk.Label(self, bg="pink")
+        columna4.grid(row=0, column=4, ipadx=80)
+
+        columna5 = tk.Label(self, bg="pink")
+        columna5.grid(row=0, column=5, ipadx=80)
+
+        columna6 = tk.Label(self, bg="pink")
+        columna6.grid(row=0, column=6, ipadx=80)
+
+        columna7 = tk.Label(self, bg="pink")
+        columna7.grid(row=0, column=7, ipadx=80)
+
+        columna8 = tk.Label(self, bg="pink")
+        columna8.grid(row=0, column=0, ipadx=80)
+
+        columna9 = tk.Label(self, bg="pink")
+        columna9.grid(row=0, column=1, ipadx=80)
+
+        columna10 = tk.Label(self, bg="pink")
+        columna10.grid(row=0, column=2, ipadx=80)
+
+        columna11 = tk.Label(self, bg="pink")
+        columna11.grid(row=0, column=3, ipadx=80, ipady=10)
+
+        #FILAS
+
+        fila0 = tk.Label(self, bg="pink")
+        fila0.grid(row=0, column=0, ipadx=80)
+
+        fila1 = tk.Label(self, bg="pink")
+        fila1.grid(row=1, column=0, ipadx=80)
+
+        fila2 = tk.Label(self, bg="pink")
+        fila2.grid(row=2, column=0, ipadx=80)
+
+        fila3 = tk.Label(self, bg="pink")
+        fila3.grid(row=3, column=0, ipadx=80)
+
+        fila4 = tk.Label(self, bg="pink")
+        fila4.grid(row=4, column=0, ipadx=80)
+
+        fila5 = tk.Label(self, bg="pink")
+        fila5.grid(row=5, column=0, ipadx=80)
+
+        fila6 = tk.Label(self, bg="pink")
+        fila6.grid(row=6, column=0, ipadx=80)
+
+        fila7 = tk.Label(self, bg="pink")
+        fila7.grid(row=7, column=0, ipadx=80)
+
+        fila8 = tk.Label(self, bg="pink")
+        fila8.grid(row=4, column=0, ipadx=80)
+
+        fila9 = tk.Label(self, bg="pink")
+        fila9.grid(row=5, column=0, ipadx=80)
+
+        fila10 = tk.Label(self, bg="pink")
+        fila10.grid(row=6, column=0, ipadx=80)
+
+        fila11 = tk.Label(self, bg="pink")
+        fila11.grid(row=7, column=0, ipadx=80)
+
+
+
+        label = tk.Label(self, text="Nombres y apellidos del nuevo paciente", font=FUENTE3, background="pink")
+        label.grid(row=3, column=0, columnspan=4,padx=20, sticky="s")
+
+        label= tk.Entry(self, font=FUENTE3, width=32, bg="white")
+        label.grid(row=4, column=0, columnspan=4,padx=20, sticky="s")
+
+        label = tk.Label(self, text="DNI" , font=FUENTE3, background="pink")
+        label.grid(row=7, column=0, padx=50, columnspan=1, sticky="W")
+
+        label = tk.Label(self, text="edad", font=FUENTE3, background="pink")
+        label.grid(row=7, column=2, padx=50, columnspan=1, sticky="W")
+
+        label = tk.Label(self, text="sexo", font=FUENTE3, background="pink")
+        label.grid(row=7, column=4, padx=50, columnspan=1, sticky="W")
+
+        label = tk.Label(self, text="F.nacimiento", font=FUENTE3, background="pink")
+        label.grid(row=8, column=0, padx=50, columnspan=1, sticky="W")
+
+        label = tk.Label(self, text="IMC(%)", font=FUENTE3, background="pink")
+        label.grid(row=8 , column=2, padx=50, columnspan=1, sticky="W")
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=320, y=220)
-
-        label = tk.Label(self, text="DNI" , font=FUENTE3, background="white")
-        label.place(x=200, y=320)
+        entry.grid(row=7, column=1, padx=50, columnspan=1, sticky="e")
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=320, y=320)
-
-        label = tk.Label(self, text="Edad" , font=FUENTE3, background="white")
-        label.place(x=400, y=320)
+        entry.grid(row=7, column=3, padx=50, columnspan=1, sticky="e")
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=520, y=220)
-
-        label = tk.Label(self, text="Fecha de nacimiento", font=FUENTE3, background="white")
-        label.place(x=600, y=320)
+        entry.grid(row=7, column=5, padx=50, columnspan=1, sticky="e")
 
         entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=720, y=220)
+        entry.grid(row=8, column=1, padx=50, columnspan=1, sticky="e")
+
+        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        entry.grid(row=8, column=3, padx=50, columnspan=1, sticky="e")
+
+        label = tk.Label(self, text="Datos Personales" ,width=75 ,font=FUENTE3, background="#7fffd4")
+        label.grid(row=6, column=0, padx=50, columnspan=6, sticky="s")
+
+        #entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        #entry.place(x=520, y=220)
+
+        #label = tk.Label(self, text="Fecha de nacimiento", font=FUENTE3, background="white")
+        #label.place(x=600, y=320)
+
+        #entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        #entry.place(x=720, y=220)
 
 
 
