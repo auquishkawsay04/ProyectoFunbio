@@ -400,16 +400,16 @@ class BuscadorDNI(tk.Frame):
 
 #estoy teniendo problemas con el self dice que eno esta definido
         label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="#CCCCFF")
-        label.place(x=190, y=150)
+        label.grid(row=3, column=0, columnspan=4, padx=20, sticky="w")
 
         paciente_id = tk.StringVar()
         entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="#CCCCFF")
         entry.focus_set()
-        entry.place(x=400, y=320)
+        entry.grid(row=4, column=0, columnspan=4, padx=20, sticky="w")
 
         button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
                            font=FUENTE3, command=verficar_id)
-        button.place(x=460, y=500)
+        button.grid(row=4, column=5, columnspan=4, padx=20, sticky="w")
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
@@ -491,12 +491,12 @@ class HistoriaPacienteAntiguo(tk.Frame):
         fila11 = tk.Label(self, bg="#CCCCFF")
         fila11.grid(row=7, column=0, ipadx=80)
 
-#comenzamos con las zonas
-    #primera tabla
-
-        #nombre
+        # nombre
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="#CCCCFF")
         label.place(x=190, y=150)
+
+ #comenzamos con las zonas
+    #primera tabla
 
         #Zona DNI
         label = tk.Label(self, text="DNI", font=FUENTE3, background="#CCCCFF")
@@ -533,9 +533,42 @@ class HistoriaPacienteAntiguo(tk.Frame):
         label = tk.Label(self, text="25% ", font=FUENTE3, background="#CCCCFF")
         label.grid(row=3, column=6, columnspan=4, padx=20, sticky="s")
 
+    #tabla 2
+
+        #Zona caidas
+        label = tk.Label(self, text="Cantidad de caídas anteriores:", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="3", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        # Zona tabaco
+        label = tk.Label(self, text="Consumo de tabaco:", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="No", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        # Zona Fracturas
+        label = tk.Label(self, text="Cantidad de fracturas anteriores:", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="1", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        #Zona alcohol
+        label = tk.Label(self, text="Consumo de alcohol :", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="si", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+
+
        #boton de actualizar
         button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
         button1.place(x=140, y=400)
+
+
 
 class RegistrarNuevoPaciente(tk.Frame):
 
