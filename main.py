@@ -52,7 +52,7 @@ class Login(tk.Frame):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 
         def verificar_contrasena():
-            if my_password.get() == "123":
+            if my_password.get() == "fractura12":
                 controller.show_frame(Ramas)
                 incorrect_password_label["text"] = " "
                 my_password.set("")
@@ -117,7 +117,7 @@ class Ramas(tk.Frame):
         fila1.grid(row=1, column=3, columnspan=2, sticky="nsew", ipady=65)
 
         Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#E7E6E6",fg="black", width=30, height=1,
-                           command=lambda: controller.show_frame(ActualizarRegistroNuevo))
+                           command=lambda: controller.show_frame(BuscadorDNI))
         Boton1.grid(row=2, column=1, columnspan=5, sticky="w")
 
 # separacion titulo y densidad
