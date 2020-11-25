@@ -38,7 +38,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(BuscadorDNI)
+        self.show_frame(Login)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
