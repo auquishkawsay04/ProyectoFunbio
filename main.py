@@ -323,7 +323,7 @@ class BuscadorDNI(tk.Frame):
                 paciente_id.set("")
 
 #estoy teniendo problemas con el self dice que eno esta definido
-        label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="white")
+        label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="#CCCCFF")
         label.place(x=190, y=150)
 
         paciente_id = tk.StringVar()
@@ -335,19 +335,53 @@ class BuscadorDNI(tk.Frame):
                            font=FUENTE3, command=verficar_id)
         button.place(x=460, y=500)
 
-class HistoriaPacienteAntiguo(tk.Frame):
+    class HistoriaPacienteAntiguo(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, bg="#CCCCFF")
 
-        label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
+        label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="#CCCCFF")
         label.place(x=190, y=150)
+#colocacion de las tablas
+        # label = tk.Label(self, text="Comentario:", font=FUENTE1, bg="#CCCCFF")
+        # label.grid(row=, column=, padx=, columnspan=, sticky="")
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="white")
+   #ZOna DNI
+        label = tk.Label(self, text="DNI", font=FUENTE3, background="#CCCCFF")
         label.place(x=200, y=220)
 
-        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=320, y=220)
+        label = tk.Label(self, text="74124434", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+    #Zona edad
+        label = tk.Label(self, text="Edad", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+        label = tk.Label(self, text="60", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+    #Zona nacimiento
+        label = tk.Label(self, text="Fecha de nacimiento: ", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+        label = tk.Label(self, text="13-04-1960 ", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+    #Zona sexo
+        label = tk.Label(self, text="Sexo", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+        label = tk.Label(self, text="Masculino", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+    #Zona IMC
+        label = tk.Label(self, text="IMC", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+        label = tk.Label(self, text="25%", font=FUENTE3, background="#CCCCFF")
+        label.place(x=200, y=220)
+
+    #Boton actualizar datos
         button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
         button1.place(x=140, y=400)
 
