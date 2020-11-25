@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(Login)
+        self.show_frame(RegistrarNuevoPaciente)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -355,33 +355,85 @@ class RegistrarNuevoPaciente(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, bg="white")
+        #columnas
+        columna0 = tk.Label(self, bg="white")
+        columna0.grid(row=1, column=0, ipadx=80)
 
-        label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
-        label.place(x=190, y=150)
+        columna1 = tk.Label(self, bg="white")
+        columna1.grid(row=1, column=1, ipadx=80)
 
-        label = tk.Label(self, text="Nombres y apellidos del nuevo paciente"    , font=FUENTE3, background="white")
-        label.place(x=200, y=220)
+        columna2 = tk.Label(self, bg="white")
+        columna2.grid(row=1, column=2, ipadx=80)
 
-        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=320, y=220)
+        columna3 = tk.Label(self, bg="white")
+        columna3.grid(row=1, column=3, ipadx=80)
 
-        label = tk.Label(self, text="DNI" , font=FUENTE3, background="white")
-        label.place(x=200, y=320)
+        columna4 = tk.Label(self, bg="white")
+        columna4.grid(row=1, column=4, ipadx=80)
 
-        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=320, y=320)
+        columna5 = tk.Label(self, bg="white")
+        columna5.grid(row=1, column=5, ipadx=80)
+
+        columna6 = tk.Label(self, bg="white")
+        columna6.grid(row=1, column=6, ipadx=80)
+
+        columna7 = tk.Label(self, bg="white")
+        columna7.grid(row=1, column=7, ipadx=80, ipady=10)
+        #fila
+        fila0 = tk.Label(self, bg="white")
+        fila0.grid(row=2, column=0, ipadx=80)
+
+        fila1 = tk.Label(self, bg="white")
+        fila1.grid(row=5, column=0, ipadx=80)
+
+        fila2 = tk.Label(self, bg="white")
+        fila2.grid(row=2, column=2, ipadx=80)
+
+        fila3 = tk.Label(self, bg="white")
+        fila3.grid(row=2, column=3, ipadx=80)
+
+        fila4 = tk.Label(self, bg="white")
+        fila4.grid(row=2, column=4, ipadx=80)
+
+        fila5 = tk.Label(self, bg="white")
+        fila5.grid(row=2, column=5, ipadx=80)
+
+        fila6 = tk.Label(self, bg="white")
+        fila6.grid(row=2, column=6, ipadx=80)
+
+        fila7 = tk.Label(self, bg="white")
+        fila7.grid(row=2, column=7, ipadx=80, ipady=10)
+
+        label = tk.Label(self, text="Nombres y apellidos del nuevo paciente", font=FUENTE3, background="white")
+        label.grid(row=3, column=5, padx=50, columnspan=1, sticky="e")
+
+        entry = tk.Entry(self, font=FUENTE3, width=32, bg="white")
+        entry.grid(row=4, column=5, padx=50, columnspan=1, sticky="e")
+
+        label = tk.Label(self, text="Datos Personales", font=FUENTE3,width=70, background="#7fffd4")
+        label.grid(row=6, column=0, padx=50, columnspan=7, sticky="w")
+
+        label = tk.Label(self, text="DNI:                                                       f.nacimiento:                                          DD/MM/AA      " , font=FUENTE3,width=70, background="pink")
+        label.grid(row=7, column=0, padx=50,columnspan=7, sticky="w")
+
+        entry = tk.Entry(self, font=FUENTE3, width=13, bg="white")
+        entry.grid(row=7, column=5,columnspan=2, sticky="w")
+
+        entry = tk.Entry(self, font=FUENTE3, width=13 ,bg="white")
+        entry.grid(row=7, column=2, columnspan=2 , sticky="w")
+
+        #entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
+        #entry.grid(row=7, column=2, columnspan=2, sticky="w")
 
         label = tk.Label(self, text="Edad" , font=FUENTE3, background="white")
         label.place(x=400, y=320)
 
-        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=520, y=220)
+
 
         label = tk.Label(self, text="Fecha de nacimiento", font=FUENTE3, background="white")
         label.place(x=600, y=320)
 
-        entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
-        entry.place(x=720, y=220)
+
 
 
 
