@@ -37,7 +37,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(RegistrarNuevoPaciente)
+        self.show_frame(Login)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -580,6 +580,24 @@ class RegistrarNuevoPaciente(tk.Frame):
         fila7 = tk.Label(self, bg="#CCCCFF")
         fila7.grid(row=7, column=0, ipadx=80)
 
+        fila8 = tk.Label(self, bg="#CCCCFF")
+        fila8.grid(row=8, column=0, ipadx=80)
+
+        fila9 = tk.Label(self, bg="#CCCCFF")
+        fila9.grid(row=9, column=0, ipadx=80)
+
+        fila10 = tk.Label(self, bg="#CCCCFF")
+        fila10.grid(row=10, column=0, ipadx=80)
+
+        fila11 = tk.Label(self, bg="#CCCCFF")
+        fila11.grid(row=11, column=0, ipadx=80)
+
+        fila12 = tk.Label(self, bg="#CCCCFF")
+        fila12.grid(row=12, column=0, ipadx=80)
+
+        fila13 = tk.Label(self, bg="#CCCCFF")
+        fila13.grid(row=13, column=0, ipadx=80)
+
 
         label = tk.Label(self, text="Nombres y apellidos del nuevo paciente", font=FUENTE12, background="#CCCCFF")
         label.grid(row=3, column=0, columnspan=4,padx=20, sticky="s")
@@ -619,6 +637,27 @@ class RegistrarNuevoPaciente(tk.Frame):
 
         label = tk.Label(self, text="Datos Personales",font=FUENTE12, background="#CCCCFF")
         label.grid(row=6, column=1, padx=50, columnspan=6, sticky="s")
+
+        label = tk.Label(self, text="Antecedentes", font=FUENTE12, background="#CCCCFF")
+        label.grid(row=10, column=1, padx=50, columnspan=6, sticky="s")
+
+        label = tk.Label(self, text="Cantidad de caídas anteriores:", font=FUENTE12, background="#CCCCFF")
+        label.grid(row=11, column=1, padx=50, columnspan=3, sticky="W")
+
+        label = tk.Label(self, text="Cantidad de fracturas anteriores:", font=FUENTE12, background="#CCCCFF")
+        label.grid(row=11, column=3, padx=50, columnspan=4, sticky="s")
+
+        entry = tk.Entry(self, font=FUENTE12, width=10, bg="white")
+        entry.grid(row=11, column=1, padx=50, columnspan=3, sticky="e")
+
+        entry = tk.Entry(self, font=FUENTE12, width=10, bg="white")
+        entry.grid(row=11, column=4, padx=50, columnspan=3, sticky="e")
+
+        label = tk.Label(self, text="¿Consume tabaco con frecuencia?", font=FUENTE12, background="#CCCCFF")
+        label.grid(row=12, column=1, padx=50, columnspan=3, sticky="W")
+
+        label = tk.Label(self, text="¿Consume bebidas alcohólicas con frecuencia?", font=FUENTE12, background="#CCCCFF")
+        label.grid(row=13, column=1, padx=50, columnspan=4, sticky="w")
 
         #entry = tk.Entry(self, font=FUENTE3, width=10, bg="white")
         #entry.place(x=520, y=220)
