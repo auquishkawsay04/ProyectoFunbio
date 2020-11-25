@@ -315,7 +315,7 @@ class BuscadorDNI(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, bg="#CCCCFF")
 
-        # columnas
+     # columnas
         columna0 = tk.Label(self, bg="#CCCCFF")
         columna0.grid(row=0, column=0, ipadx=80)
 
@@ -352,7 +352,7 @@ class BuscadorDNI(tk.Frame):
         columna11 = tk.Label(self, bg="#CCCCFF")
         columna11.grid(row=0, column=3, ipadx=80, ipady=10)
 
-        # FILAS
+    # FILAS
 
         fila0 = tk.Label(self, bg="#CCCCFF")
         fila0.grid(row=0, column=0, ipadx=80)
@@ -491,14 +491,49 @@ class HistoriaPacienteAntiguo(tk.Frame):
         fila11 = tk.Label(self, bg="#CCCCFF")
         fila11.grid(row=7, column=0, ipadx=80)
 
+#comenzamos con las zonas
+    #primera tabla
+
+        #nombre
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="#CCCCFF")
         label.place(x=190, y=150)
 
-        label = tk.Label(self, text="Nombre", font=FUENTE3, background="#CCCCFF")
-        label.place(x=200, y=220)
+        #Zona DNI
+        label = tk.Label(self, text="DNI", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=3, column=0, columnspan=4, padx=20, sticky="s")
 
-        entry = tk.Entry(self, font=FUENTE3, width=10, bg="#CCCCFF")
-        entry.place(x=320, y=220)
+        label = tk.Label(self, text="DNI", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=3, column=2, columnspan=4, padx=20, sticky="s")
+
+        # Zona edad
+        label = tk.Label(self, text="Edad", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=4, column=0, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="60", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=4, column=2, columnspan=4, padx=20, sticky="s")
+
+        # Zona nacimiento
+        label = tk.Label(self, text="Fecha de nacimiento:", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=3, column=3, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="13-04-1960", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=3, column=4, columnspan=4, padx=20, sticky="s")
+
+        #Zona sexo
+        label = tk.Label(self, text="Sexo:", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=4, column=3, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="masculino", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=4, column=4, columnspan=4, padx=20, sticky="s")
+
+        # Zona IMC
+        label = tk.Label(self, text="IMC:", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=3, column=5, columnspan=4, padx=20, sticky="s")
+
+        label = tk.Label(self, text="25% ", font=FUENTE3, background="#CCCCFF")
+        label.grid(row=3, column=6, columnspan=4, padx=20, sticky="s")
+
+       #boton de actualizar
         button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
         button1.place(x=140, y=400)
 
