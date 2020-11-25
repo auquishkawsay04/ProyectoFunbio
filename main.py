@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(Login)
+        self.show_frame(BuscadorDNI)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -50,7 +50,7 @@ class Login(tk.Frame):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 
         def verificar_contrasena():
-            if my_password.get() == "":
+            if my_password.get() == "123":
                 controller.show_frame(Ramas)
                 incorrect_password_label["text"] = " "
                 my_password.set("")
@@ -313,7 +313,7 @@ class MostradorResultados(tk.Frame):
 class BuscadorDNI(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="white")
+        tk.Frame.__init__(self, parent, bg="#CCCCFF")
 
         def verficar_id():
             if paciente_id.get() == "74124434":
@@ -338,7 +338,7 @@ class BuscadorDNI(tk.Frame):
 class HistoriaPacienteAntiguo(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="white")
+        tk.Frame.__init__(self, parent, bg="#CCCCFF")
 
         label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="white")
         label.place(x=190, y=150)
@@ -354,7 +354,7 @@ class HistoriaPacienteAntiguo(tk.Frame):
 class RegistrarNuevoPaciente(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="white")
+        tk.Frame.__init__(self, parent, bg="#CCCCFF")
 
         label = tk.Label(self, text="Ingrese los datos del nuevo paciente.", font=FUENTE3, background="white")
         label.place(x=190, y=150)
