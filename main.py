@@ -36,7 +36,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(RegistrarNuevoPaciente)
+        self.show_frame(BuscadorDNI)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -400,16 +400,16 @@ class BuscadorDNI(tk.Frame):
 
 #estoy teniendo problemas con el self dice que eno esta definido
         label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=0, columnspan=4, padx=20, sticky="w")
+        label.grid(row=3, column=0, columnspan=4, padx=20, sticky="n")
 
         paciente_id = tk.StringVar()
         entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="#CCCCFF")
         entry.focus_set()
-        entry.grid(row=4, column=0, columnspan=4, padx=20, sticky="w")
+        entry.grid(row=7, column=2, columnspan=4, padx=20, sticky="s")
 
         button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
                            font=FUENTE3, command=verficar_id)
-        button.grid(row=4, column=5, columnspan=4, padx=20, sticky="w")
+        button.grid(row=7, column=4, columnspan=4, padx=20, sticky="s")
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
@@ -513,6 +513,7 @@ class HistoriaPacienteAntiguo(tk.Frame):
         label.grid(row=4, column=2, columnspan=4, padx=20, sticky="s")
 
         # Zona nacimiento
+
         label = tk.Label(self, text="Fecha de nacimiento:", font=FUENTE3, background="#CCCCFF")
         label.grid(row=3, column=3, columnspan=4, padx=20, sticky="s")
 
@@ -536,32 +537,32 @@ class HistoriaPacienteAntiguo(tk.Frame):
     #tabla 2
 
         #Zona caidas
-        label = tk.Label(self, text="Cantidad de caídas anteriores:", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+        #label = tk.Label(self, text="Cantidad de caídas anteriores:", font=FUENTE3, background="#CCCCFF")
+        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
-        label = tk.Label(self, text="3", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+        # label = tk.Label(self, text="3", font=FUENTE3, background="#CCCCFF")
+       # label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
         # Zona tabaco
-        label = tk.Label(self, text="Consumo de tabaco:", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+          #label = tk.Label(self, text="Consumo de tabaco:", font=FUENTE3, background="#CCCCFF")
+           #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
-        label = tk.Label(self, text="No", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+        #label = tk.Label(self, text="No", font=FUENTE3, background="#CCCCFF")
+        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
         # Zona Fracturas
-        label = tk.Label(self, text="Cantidad de fracturas anteriores:", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+        #label = tk.Label(self, text="Cantidad de fracturas anteriores:", font=FUENTE3, background="#CCCCFF")
+        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
-        label = tk.Label(self, text="1", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+        #label = tk.Label(self, text="1", font=FUENTE3, background="#CCCCFF")
+       # label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
         #Zona alcohol
-        label = tk.Label(self, text="Consumo de alcohol :", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+        #label = tk.Label(self, text="Consumo de alcohol :", font=FUENTE3, background="#CCCCFF")
+        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
-        label = tk.Label(self, text="si", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=, column=, columnspan=4, padx=20, sticky="s")
+       # label = tk.Label(self, text="si", font=FUENTE3, background="#CCCCFF")
+        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
 
 
        #boton de actualizar
