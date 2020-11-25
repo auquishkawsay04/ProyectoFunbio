@@ -1,8 +1,10 @@
 import tkinter as tk
+from PIL import ImageTk, Image
+
 
 
 FUENTE0 = ("SF Pro Display", 10)
-FUENTE1 = ("SF Pro Display", 15)
+FUENTE1 = ("calibri", 15)
 FUENTE2 = ("Calibri", 20)
 FUENTE3 = ("SF Pro Display", 25)
 FUENTE4 = ("SF Pro Display", 30)
@@ -36,7 +38,7 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(BuscadorDNI)
+        self.show_frame(Login)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -50,7 +52,7 @@ class Login(tk.Frame):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 
         def verificar_contrasena():
-            if my_password.get() == "123":
+            if my_password.get() == "fractura12":
                 controller.show_frame(Ramas)
                 incorrect_password_label["text"] = " "
                 my_password.set("")
@@ -59,6 +61,11 @@ class Login(tk.Frame):
 
         label = tk.Label(self, text="TENDOUX", font=FUENTE7, bg="white")
         label.pack(pady=75, padx=40,ipadx=15)
+
+
+        #imagen = ImageTk.PhotoImage(Image.open(r"C:\Users\anel\Desktop\PEROSNA.png"))
+        #imagenhuesito = tk.Label(image=imagen)
+        #imagenhuesito.pack()
 
         password_label = tk.Label(self, text="Ingrese su contraseña", bg="#CCCCFF", fg="black", font=FUENTE1)
         password_label.pack(ipady=10)
@@ -110,7 +117,7 @@ class Ramas(tk.Frame):
         fila1.grid(row=1, column=3, columnspan=2, sticky="nsew", ipady=65)
 
         Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#E7E6E6",fg="black", width=30, height=1,
-                           command=lambda: controller.show_frame(ActualizarRegistroNuevo))
+                           command=lambda: controller.show_frame(BuscadorDNI))
         Boton1.grid(row=2, column=1, columnspan=5, sticky="w")
 
 # separacion titulo y densidad
@@ -125,7 +132,7 @@ class ActualizarRegistroNuevo(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 #   titulo
-        label2 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
+        label2 = tk.Label(self, text="INGRESAR EL NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
         label2.grid(row=1, column=1, columnspan=6, ipadx=180)
 # columnas
         columna0 = tk.Label(self, bg="#CCCCFF")
@@ -155,21 +162,21 @@ class ActualizarRegistroNuevo(tk.Frame):
 #separacion titulo y densidad
         fila2 = tk.Label(self, bg="#CCCCFF")
         fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=8)
-# densidadosea
-        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
+# cantidaddecaidasanteriores
+        label1 = tk.Label(self, text="Cantidad de caídas anteriores*:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
         label1.grid(row=3,column=1, padx=50, columnspan=3,sticky="e")
 
-        entrada_densidad = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
-        entrada_densidad.grid(row=3,column=4, columnspan=2, sticky="w")
+        entrada_caidas = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
+        entrada_caidas.grid(row=3,column=4, columnspan=2, sticky="w")
 # separacion titulo y densidad
         fila4 = tk.Label(self, bg="#CCCCFF")
         fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=8)
-#  #   IMC
-        label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black",height=2)
+#  #   fracturas
+        label2 = tk.Label(self, text="Cantidad de fracturas anteriores*:", font=FUENTE1, bg="#CCCCFF", fg="black",height=2)
         label2.grid(row=5, column=1, padx=50, columnspan=3,sticky="e")
 
-        entrada_imc = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
-        entrada_imc.grid(row=5,column=4, columnspan=2, sticky="w")
+        entrada_fracturas = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
+        entrada_fracturas.grid(row=5,column=4, columnspan=2, sticky="w")
 # separacion
         fila7 = tk.Label(self, bg="#CCCCFF")
         fila7.grid(row=7, column=3, columnspan=2, sticky="nsew", ipady=8)
@@ -196,7 +203,7 @@ class ActualizarRegistroNuevo(tk.Frame):
         fila11.grid(row=11, column=3, columnspan=2, sticky="nsew", ipady=20)
 
 #BOTONENTER
-        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=3,
+        button = tk.Button(self, text="REGISTRAR Y VER RESULTADOS", font=FUENTE1, relief="groove", borderwidth=3,
                            bg="#1168bf", fg="white", command=lambda: controller.show_frame(Ramas))
         button.grid(row=12, column=4, columnspan=3, ipadx=40)
 
@@ -280,13 +287,6 @@ class MostradorResultados(tk.Frame):
         button = tk.Button(self, text="Imprimir resultados", font=FUENTE1, relief="groove", borderwidth=2,
                            command=lambda: controller.show_frame(ActualizarRegistroNuevo))
         button.grid(row=9,column=5, columnspan=3, ipadx=10)
-
-
-
-
-
-
-
 
 
 
