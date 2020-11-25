@@ -50,7 +50,7 @@ class Login(tk.Frame):
         tk.Frame.__init__(self, parent, background="#CCCCFF")
 
         def verificar_contrasena():
-            if my_password.get() == "":
+            if my_password.get() == "123":
                 controller.show_frame(Ramas)
                 incorrect_password_label["text"] = " "
                 my_password.set("")
@@ -322,13 +322,13 @@ class BuscadorDNI(tk.Frame):
         columna1 = tk.Label(self, bg="#CCCCFF")
         columna1.grid(row=0, column=1, ipadx=80)
 
-        columna2 = tk.Label(self, bg="#CCCCFF")
+        columna2 = tk.Label(self, bg="yellow")
         columna2.grid(row=0, column=2, ipadx=80)
 
-        columna3 = tk.Label(self, bg="#CCCCFF")
+        columna3 = tk.Label(self, bg="blue")
         columna3.grid(row=0, column=3, ipadx=80)
 
-        columna4 = tk.Label(self, bg="#CCCCFF")
+        columna4 = tk.Label(self, bg="red")
         columna4.grid(row=0, column=4, ipadx=80)
 
         columna5 = tk.Label(self, bg="#CCCCFF")
@@ -340,57 +340,6 @@ class BuscadorDNI(tk.Frame):
         columna7 = tk.Label(self, bg="#CCCCFF")
         columna7.grid(row=0, column=7, ipadx=80)
 
-        columna8 = tk.Label(self, bg="#CCCCFF")
-        columna8.grid(row=0, column=0, ipadx=80)
-
-        columna9 = tk.Label(self, bg="#CCCCFF")
-        columna9.grid(row=0, column=1, ipadx=80)
-
-        columna10 = tk.Label(self, bg="#CCCCFF")
-        columna10.grid(row=0, column=2, ipadx=80)
-
-        columna11 = tk.Label(self, bg="#CCCCFF")
-        columna11.grid(row=0, column=3, ipadx=80, ipady=10)
-
-    # FILAS
-
-        fila0 = tk.Label(self, bg="#CCCCFF")
-        fila0.grid(row=0, column=0, ipadx=80)
-
-        fila1 = tk.Label(self, bg="#CCCCFF")
-        fila1.grid(row=1, column=0, ipadx=80)
-
-        fila2 = tk.Label(self, bg="#CCCCFF")
-        fila2.grid(row=2, column=0, ipadx=80)
-
-        fila3 = tk.Label(self, bg="#CCCCFF")
-        fila3.grid(row=3, column=0, ipadx=80)
-
-        fila4 = tk.Label(self, bg="#CCCCFF")
-        fila4.grid(row=4, column=0, ipadx=80)
-
-        fila5 = tk.Label(self, bg="#CCCCFF")
-        fila5.grid(row=5, column=0, ipadx=80)
-
-        fila6 = tk.Label(self, bg="#CCCCFF")
-        fila6.grid(row=6, column=0, ipadx=80)
-
-        fila7 = tk.Label(self, bg="#CCCCFF")
-        fila7.grid(row=7, column=0, ipadx=80)
-
-        fila8 = tk.Label(self, bg="#CCCCFF")
-        fila8.grid(row=4, column=0, ipadx=80)
-
-        fila9 = tk.Label(self, bg="#CCCCFF")
-        fila9.grid(row=5, column=0, ipadx=80)
-
-        fila10 = tk.Label(self, bg="#CCCCFF")
-        fila10.grid(row=6, column=0, ipadx=80)
-
-        fila11 = tk.Label(self, bg="#CCCCFF")
-        fila11.grid(row=7, column=0, ipadx=80)
-
-
         def verficar_id():
             if paciente_id.get() == "74124434":
 
@@ -401,6 +350,10 @@ class BuscadorDNI(tk.Frame):
 #estoy teniendo problemas con el self dice que eno esta definido
         label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="#CCCCFF")
         label.grid(row=3, column=0, columnspan=4, padx=20, sticky="n")
+
+        # separacion titulo y densidad
+        fila6 = tk.Label(self, bg="#CCCCFF")
+        fila6.grid(row=6, column=3, columnspan=2, sticky="nsew", ipady=80)
 
         paciente_id = tk.StringVar()
         entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="#CCCCFF")
