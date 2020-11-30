@@ -4,7 +4,7 @@ import tkinter as tk
 FUENTE0 = ("Bahnschrift", 10)
 FUENTE1 = ("Bahnschrift Light", 15)
 FUENTE2 = ("Bahnschrift", 20)
-FUENTE3 = ("Calibri", 25)
+FUENTE3 = ("Bahnschrift SemiBold", 25)
 FUENTE4 = ("Calibri", 30)
 FUENTE5 = ("Calibri", 35)
 FUENTE6 = ("Calibri", 40)
@@ -16,6 +16,8 @@ FUENTE11 = ("Calibri", 65)
 FUENTE13 = ("Bahnschrift SemiBold", 19)
 FUENTE14 = ("Bahnschrift Light", 12)
 FUENTE15 = ("Bahnschrift Light", 19)
+FUENTE16 = ("Bahnschrift SemiBold", 20)
+FUENTE17 = ("Calibri Bold", 25)
 
 class AuquishApp(tk.Tk):
 
@@ -679,12 +681,12 @@ class RegistrarNuevoPaciente(tk.Frame):
         row22 = tk.Label(self, bg="white").grid(row=22, column=7, ipadx=80)
 
 #   BOTON FINALIZAR----------------------------------------------------------------------------------------------------
-        button1 = tk.Button(self, text="FINALIZAR", font=FUENTE3, relief="groove", borderwidth=2, height=1)
+        button1 = tk.Button(self, text="FINALIZAR", font=FUENTE16, relief="groove", borderwidth=2, height=1)
         button1.grid(row=23, column=5, columnspan=2, ipadx=27)
 
         row24 = tk.Label(self, bg="white").grid(row=24, column=7, ipadx=80, ipady=10)
 
-        botonRegresar = tk.Button(self, text="←", font=FUENTE3, relief="groove", borderwidth=2, width=5, height=1, bg="white")
+        botonRegresar = tk.Button(self, text="←", font=FUENTE17, relief="groove", borderwidth=2, width=5, height=1, bg="white")
         botonRegresar.place(x=3, y=3)
 
 
