@@ -2,7 +2,7 @@ import tkinter as tk
 
 
 FUENTE0 = ("Bahnschrift", 10)
-FUENTE1 = ("Bahnschrift Light", 15)
+FUENTE1 = ("Bahnschrift Light", 12)
 FUENTE2 = ("Bahnschrift", 20)
 FUENTE3 = ("Bahnschrift SemiBold", 25)
 FUENTE4 = ("Calibri", 30)
@@ -13,7 +13,7 @@ FUENTE8 = ("Calibri", 50)
 FUENTE9 = ("Calibri", 55)
 FUENTE10 = ("Calibri", 60)
 FUENTE11 = ("Calibri", 65)
-FUENTE13 = ("Bahnschrift SemiBold", 19)
+FUENTE13 = ("Bahnschrift SemiBold", 15)
 FUENTE14 = ("Bahnschrift Light", 12)
 FUENTE15 = ("Bahnschrift Light", 19)
 FUENTE16 = ("Bahnschrift SemiBold", 20)
@@ -535,14 +535,14 @@ class RegistrarNuevoPaciente(tk.Frame):
         tk.Frame.__init__(self, parent, bg="WHITE")
 
 #   columns------------------------------------------------------------------------------------------------------------
-        column0 = tk.Label(self, bg="brown").grid(row=0, column=0, ipadx=80)
-        column1 = tk.Label(self, bg="red").grid(row=0, column=1, ipadx=80)
-        column2 = tk.Label(self, bg="purple").grid(row=0, column=2, ipadx=80)
-        column3 = tk.Label(self, bg="green").grid(row=0, column=3, ipadx=80)
-        column4 = tk.Label(self, bg="yellow").grid(row=0, column=4, ipadx=80)
-        column5 = tk.Label(self, bg="red").grid(row=0, column=5, ipadx=80)
-        column6 = tk.Label(self, bg="orange").grid(row=0, column=6, ipadx=80)
-        column7 = tk.Label(self, bg="green").grid(row=0, column=7, ipadx=80)
+        column0 = tk.Label(self, bg="white").grid(row=0, column=0, ipadx=80)
+        column1 = tk.Label(self, bg="white").grid(row=0, column=1, ipadx=80)
+        column2 = tk.Label(self, bg="white").grid(row=0, column=2, ipadx=80)
+        column3 = tk.Label(self, bg="white").grid(row=0, column=3, ipadx=80)
+        column4 = tk.Label(self, bg="white").grid(row=0, column=4, ipadx=80)
+        column5 = tk.Label(self, bg="white").grid(row=0, column=5, ipadx=80)
+        column6 = tk.Label(self, bg="white").grid(row=0, column=6, ipadx=80)
+        column7 = tk.Label(self, bg="white").grid(row=0, column=7, ipadx=80)
 
 #   row1 ---------------------------------------------------------------------------------------------------------------
         row1 = tk.Label(self, bg="white").grid(row=1, column=7, ipadx=80, ipady=0)
