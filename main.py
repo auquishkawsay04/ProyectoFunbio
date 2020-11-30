@@ -5,19 +5,15 @@ FUENTE0 = ("Bahnschrift", 10)
 FUENTE1 = ("Bahnschrift Light", 12)
 FUENTE2 = ("Bahnschrift", 20)
 FUENTE3 = ("Bahnschrift SemiBold", 25)
-FUENTE4 = ("Calibri", 30)
-FUENTE5 = ("Calibri", 35)
-FUENTE6 = ("Calibri", 40)
-FUENTE7 = ("Calibri", 45)
-FUENTE8 = ("Calibri", 50)
-FUENTE9 = ("Calibri", 55)
-FUENTE10 = ("Calibri", 60)
-FUENTE11 = ("Calibri", 65)
+
 FUENTE13 = ("Bahnschrift SemiBold", 15)
-FUENTE14 = ("Bahnschrift Light", 12)
+FUENTE14 = ("Bahnschrift Light", 10)
+FUENTE25 = ("Bahnschrift Light", 19)
 FUENTE15 = ("Bahnschrift Light", 19)
-FUENTE16 = ("Bahnschrift SemiBold", 20)
+FUENTE16 = ("Bahnschrift SemiBold", 18)
 FUENTE17 = ("Calibri Bold", 25)
+FUENTE21 = ("Bahnschrift SemiBold", 12)
+FUENTE35 = ("Bahnschrift Light", 25)
 
 class AuquishApp(tk.Tk):
 
@@ -41,18 +37,17 @@ class AuquishApp(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(RegistrarNuevoPaciente)
+        self.show_frame(Login)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
-#INICIO CODIGO DAVID LINEA 45
 
 class Login(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#CCCCFF")
+        tk.Frame.__init__(self, parent, background="WHITE")
 
         def verificar_contrasena():
             if my_password.get() == "123":
@@ -62,8 +57,8 @@ class Login(tk.Frame):
             else:
                 incorrect_password_label["text"] = "La contraseña que ingresó es incorrecta. Inténtelo de nuevo"
 
-        label = tk.Label(self, text="TENDOUX", font=FUENTE7, bg="white")
-        label.pack(pady=75, padx=40,ipadx=15)
+        titulo = tk.Label(self, text="TENDOUX", font=FUENTE15, bg="white")
+        titulo.pack(pady=75, padx=40,ipadx=15)
 
         password_label = tk.Label(self, text="Ingrese su contraseña", bg="#CCCCFF", fg="black", font=FUENTE1)
         password_label.pack(ipady=10)
@@ -83,451 +78,387 @@ class Login(tk.Frame):
 class Ramas(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#CCCCFF")
+        tk.Frame.__init__(self, parent, background="white")
 
-        # columnas
-        columna0 = tk.Label(self, bg="#CCCCFF")
-        columna0.grid(row=0, column=0, ipadx=80)
+#   columns------------------------------------------------------------------------------------------------------------
+        column0 = tk.Label(self, bg="white").grid(row=0, column=0, ipadx=80)
+        column1 = tk.Label(self, bg="white").grid(row=0, column=1, ipadx=80)
+        column2 = tk.Label(self, bg="white").grid(row=0, column=2, ipadx=80)
+        column3 = tk.Label(self, bg="white").grid(row=0, column=3, ipadx=80)
+        column4 = tk.Label(self, bg="white").grid(row=0, column=4, ipadx=80)
+        column5 = tk.Label(self, bg="white").grid(row=0, column=5, ipadx=80)
+        column6 = tk.Label(self, bg="white").grid(row=0, column=6, ipadx=80)
+        column7 = tk.Label(self, bg="white").grid(row=0, column=7, ipadx=80)
 
-        columna1 = tk.Label(self, bg="#CCCCFF")
-        columna1.grid(row=0, column=1, ipadx=80)
+        row1 = tk.Label(self, bg="white").grid(row=1, column=7, sticky="nsew", ipadx=80,ipady=50)
 
-        columna2 = tk.Label(self, bg="#CCCCFF")
-        columna2.grid(row=0, column=2, ipadx=80)
+        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE15, bg="#E7E6E6", fg="black", anchor="center",
+                           relief="groove", borderwidth=2,command=lambda: controller.show_frame(BuscadorDNI))
+        Boton1.grid(row=2, column=1, columnspan=4, sticky="NSEW",ipady=10)
 
-        columna3 = tk.Label(self, bg="#CCCCFF")
-        columna3.grid(row=0, column=3, ipadx=80)
+        row3 = tk.Label(self, bg="white").grid(row=3, column=7, sticky="nsew", ipadx=80,ipady=50)
 
-        columna4 = tk.Label(self, bg="#CCCCFF")
-        columna4.grid(row=0, column=4, ipadx=80)
-
-        columna5 = tk.Label(self, bg="#CCCCFF")
-        columna5.grid(row=0, column=5, ipadx=80)
-
-        columna6 = tk.Label(self, bg="#CCCCFF")
-        columna6.grid(row=0, column=6, ipadx=80)
-
-        columna7 = tk.Label(self, bg="#CCCCFF")
-        columna7.grid(row=0, column=7, ipadx=80, ipady=10)
-
-#separacion titulo
-        fila1 = tk.Label(self, bg="#CCCCFF")
-        fila1.grid(row=1, column=3, columnspan=2, sticky="nsew", ipady=65)
-
-        Boton1 = tk.Button(self, text="Pacientes registrados", font=FUENTE2, bg="#E7E6E6",fg="black", width=30, height=1,
-                           command=lambda: controller.show_frame(ActualizarRegistroNuevo))
-        Boton1.grid(row=2, column=1, columnspan=5, sticky="w")
-
-# separacion titulo y densidad
-        fila2 = tk.Label(self, bg="#CCCCFF")
-        fila2.grid(row=3, column=3, columnspan=2, sticky="nsew", ipady=50)
-
-        Boton2 = tk.Button(self, text="Agregar nuevo paciente", font=FUENTE2, bg="#E7E6E6", fg="black", width=30, height=1)
-        Boton2.grid(row=4, column=1, columnspan=5, sticky="w")
+        Boton2 = tk.Button(self, text="Registrar nuevo paciente", font=FUENTE15, bg="#E7E6E6", fg="black",
+                           anchor="center", relief="groove", borderwidth=2,
+                           command=lambda: controller.show_frame(RegistrarNuevoPaciente))
+        Boton2.grid(row=4, column=1, columnspan=4,sticky="NSEW",ipady=11)
 
 class ActualizarRegistroNuevo(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#CCCCFF")
-#   titulo
-        label2 = tk.Label(self, text="INGRESAR UN NUEVO REGISTRO", font=FUENTE2, bg="#c2deb5", fg="black", relief="groove", height=2)
-        label2.grid(row=1, column=1, columnspan=6, ipadx=180)
-# columnas
-        columna0 = tk.Label(self, bg="#CCCCFF")
-        columna0.grid(row=0, column=0,ipadx=80)
+        tk.Frame.__init__(self, parent, bg="WHITE")
 
-        columna1 = tk.Label(self, bg="#CCCCFF")
-        columna1.grid(row=0, column=1,ipadx=80)
+#   columns------------------------------------------------------------------------------------------------------------
+        column0 = tk.Label(self, bg="WHITE").grid(row=0, column=0, ipadx=80)
+        column1 = tk.Label(self, bg="WHITE").grid(row=0, column=1, ipadx=80)
+        column2 = tk.Label(self, bg="WHITE").grid(row=0, column=2, ipadx=80)
+        column3 = tk.Label(self, bg="WHITE").grid(row=0, column=3, ipadx=80)
+        column4 = tk.Label(self, bg="WHITE").grid(row=0, column=4, ipadx=80)
+        column5 = tk.Label(self, bg="WHITE").grid(row=0, column=5, ipadx=80)
+        column6 = tk.Label(self, bg="WHITE").grid(row=0, column=6, ipadx=80)
+        column7 = tk.Label(self, bg="WHITE").grid(row=0, column=7, ipadx=80)
 
-        columna2 = tk.Label(self, bg="#CCCCFF")
-        columna2.grid(row=0, column=2, ipadx=80)
+#   row1 ---------------------------------------------------------------------------------------------------------------
+        row1 = tk.Label(self, bg="white").grid(row=1, column=7, ipadx=80, ipady=40)
 
-        columna3 = tk.Label(self, bg="#CCCCFF")
-        columna3.grid(row=0, column=3, ipadx=80)
+#   INGRESAR NUEVO REGISTRO AL DD/MM/AAAA----------------------------------------------------------------------------
+        label1 = tk.Label(self, text="  INGRESAR NUEVO REGISTRO", font=FUENTE13, background="#5b9fc9",
+                          anchor="w", fg="white").grid(row=2, column=1, columnspan=6, sticky="NSEW")
 
-        columna4 = tk.Label(self, bg="#CCCCFF")
-        columna4.grid(row=0, column=4,ipadx=80)
+        row5 = tk.Label(self, bg="white").grid(row=5, column=7, ipadx=80, ipady=0)
 
-        columna5 = tk.Label(self, bg="#CCCCFF")
-        columna5.grid(row=0, column=5,ipadx=80)
+#   ALTURA
+        label10 = tk.Label(self, text="Altura:  ", font=FUENTE1, anchor="e", bg="white").grid(
+            row=6, column=1, columnspan=2, sticky="nsew")
 
-        columna6 = tk.Label(self, bg="#CCCCFF")
-        columna6.grid(row=0, column=6,ipadx=80)
+        caidasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=6, column=3, sticky="nsew")
 
-        columna7 = tk.Label(self, bg="#CCCCFF")
-        columna7.grid(row=0, column=7,ipadx=80, ipady=10)
+#   TALLA
+        label11 = tk.Label(self, text="Peso: ", font=FUENTE1, anchor="e", bg="white")
+        label11.grid(row=6, column=4, columnspan=2, sticky="nsew")
 
-#separacion titulo y densidad
-        fila2 = tk.Label(self, bg="#CCCCFF")
-        fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=8)
-# densidadosea
-        label1 = tk.Label(self, text="Densidad Ósea (gramos/cm^2):", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
-        label1.grid(row=3,column=1, padx=50, columnspan=3,sticky="e")
+        fracturasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=6, column=6, sticky="nsew")
 
-        entrada_densidad = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
-        entrada_densidad.grid(row=3,column=4, columnspan=2, sticky="w")
-# separacion titulo y densidad
-        fila4 = tk.Label(self, bg="#CCCCFF")
-        fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=8)
-#  #   IMC
-        label2 = tk.Label(self, text="Índice de Masa Corporal:", font=FUENTE1, bg="#CCCCFF", fg="black",height=2)
-        label2.grid(row=5, column=1, padx=50, columnspan=3,sticky="e")
+#   DMO
+        label10 = tk.Label(self, text="DMO:  ", font=FUENTE1, anchor="e", bg="white").grid(
+            row=7, column=1, columnspan=2, sticky="nsew")
 
-        entrada_imc = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
-        entrada_imc.grid(row=5,column=4, columnspan=2, sticky="w")
-# separacion
-        fila7 = tk.Label(self, bg="#CCCCFF")
-        fila7.grid(row=7, column=3, columnspan=2, sticky="nsew", ipady=8)
-# #   tscore
-        label2 = tk.Label(self, text="T-Score:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
-        label2.grid(row=8, column=1, padx=50, columnspan=3, sticky="e")
+        caidasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=7, column=3, sticky="nsew")
 
-        entrada_tscore = tk.Entry(self, font=FUENTE3, width=9, bg="#CCCCFF")
-        entrada_tscore.grid(row=8, column=4, columnspan=2, sticky="w")
+#   T-Score
+        label11 = tk.Label(self, text="T-Score: ", font=FUENTE1, anchor="e", bg="white")
+        label11.grid(row=7, column=4, columnspan=2, sticky="nsew")
 
-# separacion
-        fila9 = tk.Label(self, bg="#CCCCFF")
-        fila9.grid(row=9, column=3, columnspan=2, sticky="nsew", ipady=8)
+        fracturasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=7, column=6, sticky="nsew")
 
-#comentario
-        label3 = tk.Label(self, text="Comentario:", font=FUENTE1, bg="#CCCCFF", fg="black", height=2)
-        label3.grid(row=10, column=1, padx=50, columnspan=3, sticky="e")
 
-        textComentarios = tk.Text(self, font=FUENTE1, width=23, height=5, bg="#CCCCFF")
-        textComentarios.grid(row=10, column=4,columnspan=3, sticky="w")
+#   CANTIDAD DE CAIDAS ANTERIORES
+        label10 = tk.Label(self, text="Cantidad de caídas anteriores:  ", font=FUENTE1, anchor="e", bg="white").grid(
+            row=14, column=1,columnspan=2, sticky="nsew")
 
-# separacion
-        fila11 = tk.Label(self, bg="#CCCCFF")
-        fila11.grid(row=11, column=3, columnspan=2, sticky="nsew", ipady=20)
+        caidasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=14, column=3, sticky="nsew")
 
-#BOTONENTER
-        button = tk.Button(self, text="Registrar y ver resultados", font=FUENTE1, relief="groove", borderwidth=3,
-                           bg="#1168bf", fg="white", command=lambda: controller.show_frame(Ramas))
-        button.grid(row=12, column=4, columnspan=3, ipadx=40)
+#   CANTIDAD DE FRACTURAS ANTERIORES
+        label11 = tk.Label(self, text="Cantidad de fracturas anteriores: ", font=FUENTE1, anchor="e", bg="white")
+        label11.grid(row=14, column=4,columnspan=2, sticky="nsew")
 
-# separacion
-        fila11 = tk.Label(self, bg="#CCCCFF")
-        fila11.grid(row=13, column=3, columnspan=2, sticky="nsew", ipady=20)
+        fracturasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1)
+        fracturasNuevoPaciente.grid(row=14, column=6, sticky="nsew")
+
+#   CONSUME TABACO
+        label12 = tk.Label(self, text=" ¿Consume tabaco con frecuencia? ", font=FUENTE1, anchor="e", bg="white")
+        label12.grid(row=15, column=1, columnspan=2, sticky="nsew",ipady=5)
+
+        tabacoNuevoPaciente = tk.IntVar()
+        botonTabaco1 = tk.Radiobutton(self, text="Sí", variable=tabacoNuevoPaciente, value=1, font=FUENTE1,  anchor="center",
+                                      bg="white")
+        botonTabaco1.grid(row=15, column=3, sticky="nsew")
+        botonTabaco2 = tk.Radiobutton(self, text="No",  variable=tabacoNuevoPaciente, value=2, font=FUENTE1,  anchor="center",
+                                      bg="white")
+        botonTabaco2.grid(row=16, column=3, sticky="nsew")
+
+#   BEBIDAS ALCOHOLICAS
+        label13 = tk.Label(self, text=" ¿Bebe alcohol con frecuencia? ", font=FUENTE1, anchor="e", bg="white")
+        label13.grid(row=15, column=4, columnspan=2, sticky="nsew", ipady=5)
+
+        alcoholNuevoPaciente = tk.IntVar()
+        botonAlcohol1 = tk.Radiobutton(self, text="Sí", variable=alcoholNuevoPaciente, value=1, font=FUENTE1,
+                                       anchor="center", bg="white")
+        botonAlcohol1.grid(row=15, column=6, sticky="nsew")
+        botonAlcohol2 = tk.Radiobutton(self, text="No",  variable=alcoholNuevoPaciente, value=2, font=FUENTE1,
+                                       anchor="center", bg="white",)
+        botonAlcohol2.grid(row=16, column=6, sticky="nsew")
+
+        row17 = tk.Label(self, bg="white").grid(row=17, column=7, ipadx=80,ipady=50)
+
+#   BOTON ----------------------------------------------------------------------------------------------------
+        button1 = tk.Button(self, text="Registrar y ver resultados", font=FUENTE16, relief="groove", borderwidth=2,
+                            height=1, command=lambda: controller.show_frame(MostradorResultados))
+        button1.grid(row=18, column=4, columnspan=3, ipadx=27, sticky="e")
+
+        # botonRegresar = tk.Button(self, text="←", font=FUENTE17, relief="groove", borderwidth=2, width=5, height=1, bg="white")
+        # botonRegresar.place(x=3, y=3)
 
 class MostradorResultados(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, background="#CCCCFF")
-#   titulo
-        label2 = tk.Label(self, text="RESULTADOS DEL 04/12/19", font=FUENTE2, bg="#c2deb5", fg="black",
-                          relief="groove", height=2)
-        label2.grid(row=1, column=1, columnspan=6, ipadx=180)
+        tk.Frame.__init__(self, parent, bg="WHITE")
 
-# columnas
-        columna0 = tk.Label(self, bg="#CCCCFF")
-        columna0.grid(row=0, column=0, ipadx=80)
+#   columns------------------------------------------------------------------------------------------------------------
+        column0 = tk.Label(self, bg="WHITE").grid(row=0, column=0, ipadx=80)
+        column1 = tk.Label(self, bg="WHITE").grid(row=0, column=1, ipadx=80)
+        column2 = tk.Label(self, bg="WHITE").grid(row=0, column=2, ipadx=80)
+        column3 = tk.Label(self, bg="WHITE").grid(row=0, column=3, ipadx=80)
+        column4 = tk.Label(self, bg="WHITE").grid(row=0, column=4, ipadx=80)
+        column5 = tk.Label(self, bg="WHITE").grid(row=0, column=5, ipadx=80)
+        column6 = tk.Label(self, bg="WHITE").grid(row=0, column=6, ipadx=80)
+        column7 = tk.Label(self, bg="WHITE").grid(row=0, column=7, ipadx=80)
 
-        columna1 = tk.Label(self, bg="#CCCCFF")
-        columna1.grid(row=0, column=1, ipadx=80)
+#   row1 ---------------------------------------------------------------------------------------------------------------
+        row1 = tk.Label(self, bg="white").grid(row=1, column=7, ipadx=80, ipady=30)
 
-        columna2 = tk.Label(self, bg="#CCCCFF")
-        columna2.grid(row=0, column=2, ipadx=80)
+#   RESULTADOS DEL 20/05/2013----------------------------------------------------------------------------
+        label1 = tk.Label(self, text="  RESULTADOS DEL 20/05/2013", font=FUENTE13, background="#5b9fc9",
+                          anchor="w", fg="white").grid(row=2, column=1, columnspan=6, sticky="NSEW")
 
-        columna3 = tk.Label(self, bg="#CCCCFF")
-        columna3.grid(row=0, column=3, ipadx=80)
-
-        columna4 = tk.Label(self, bg="#CCCCFF")
-        columna4.grid(row=0, column=4, ipadx=80)
-
-        columna5 = tk.Label(self, bg="#CCCCFF")
-        columna5.grid(row=0, column=5, ipadx=80)
-
-        columna6 = tk.Label(self, bg="#CCCCFF")
-        columna6.grid(row=0, column=6, ipadx=80)
-
-        columna7 = tk.Label(self, bg="#CCCCFF")
-        columna7.grid(row=0, column=7, ipadx=80, ipady=10)
-
-# separacion titulo y densidad
-        fila2 = tk.Label(self, bg="#CCCCFF")
-        fila2.grid(row=2, column=3, columnspan=2, sticky="nsew", ipady=8)
-
-
-#   estadooseoactual
-        label1 = tk.Label(self, text="Estado óseo actual:", font=FUENTE1, bg="#CCCCFF")
-        label1.grid(row=3, column=1, padx=50, columnspan=3, sticky="e")
-
-        resultadoOseoDensitometria = tk.Label(self, text=" Osteoporosis Grave ", font=FUENTE1, bg="#CCCCFF")
-        resultadoOseoDensitometria.grid(row=3, column=4, columnspan=2, sticky="w")
-
-# separacion titulo y densidad
-        fila4 = tk.Label(self, bg="#CCCCFF")
-        fila4.grid(row=4, column=3, columnspan=2, sticky="nsew", ipady=8)
-
-#   recomendaciones
-        label2 = tk.Label(self, text="Recomendaciones generales:", font=FUENTE1, bg="#CCCCFF")
-        label2.grid(row=5, column=1, padx=50, columnspan=3, sticky="e")
-#
-        resultadoRecomendaciones = tk.Label(self, text="It is a long established fact that a reader", font=FUENTE1, bg="#CCCCFF")
-        resultadoRecomendaciones.grid(row=5, column=4, columnspan=6, sticky="w")
-
-# separacion titulo y densidad
-        fila6= tk.Label(self, bg="#CCCCFF")
-        fila6.grid(row=6, column=3, columnspan=2, sticky="nsew", ipady=8)
-
-#   recomendaciones
-        label3 = tk.Label(self, text="Comentario:", font=FUENTE1, bg="#CCCCFF")
-        label3.grid(row=7, column=1, padx=50, columnspan=3, sticky="e")
-#
-        resultadoComentario = tk.Label(self, text="It is a long established fact that a reader", font=FUENTE1, bg="#CCCCFF")
-        resultadoComentario.grid(row=7, column=4, columnspan=6, sticky="w")
-
-# separacion titulo y densidad
-        fila7 = tk.Label(self, bg="#CCCCFF")
-        fila7.grid(row=8, column=3, columnspan=2, sticky="nsew", ipady=70)
-
-#   boton imprimir resultados
-        button = tk.Button(self, text="Imprimir resultados", font=FUENTE1, relief="groove", borderwidth=2,
-                           command=lambda: controller.show_frame(ActualizarRegistroNuevo))
-        button.grid(row=9,column=5, columnspan=3, ipadx=10)
+        row5 = tk.Label(self, bg="white").grid(row=5, column=7, ipadx=80, ipady=0)
 
 
 
+#   Estado Óseo
+        label3 = tk.Label(self, text="Estado Óseo: ", font=FUENTE21, anchor="e", bg="white").grid(row=8, column=1, sticky="nsew")
+
+        dniNuevoPaciente = tk.Label(self, text="Osteoporosis Grave", font=FUENTE1, bg="white", anchor="w").grid(row=8, column=2, sticky="nsew")
+
+#   IMC
+        label5 = tk.Label(self, text="IMC: ", font=FUENTE21, anchor="e", bg="white").grid(row=8, column=3,
+                                                                                          sticky="nsew")
+
+        pesoNuevoPaciente = tk.Label(self, text="17", font=FUENTE1, bg="white",anchor="w").grid(row=8, column=4,
+                                                                                              sticky="nsew")
+#   DMO
+        label5 = tk.Label(self, text="DMO: ", font=FUENTE21, anchor="e", bg="white").grid(row=8, column=5,
+                                                                                          sticky="nsew")
+
+        pesoNuevoPaciente = tk.Label(self, text="1", font=FUENTE1, bg="white", anchor="w").grid(row=8, column=6,sticky="nsew")
+
+####
+        row9 = tk.Label(self, bg="white").grid(row=9, column=7, ipadx=80, ipady=0)
+
+#   Riesgo de fractura
+        label4 = tk.Label(self, text="Riesgo de fractura:", font=FUENTE21, anchor="e", bg="white").grid(row=10, column=1,sticky="nsew")
+
+        nacimientoNuevoPaciente = tk.Label(self, text="90% *",font=FUENTE1, bg="white", anchor="w").grid(row=10, column=2, sticky="nsew")
+
+#   T-Score
+        label6 = tk.Label(self, text="T-Score: ", font=FUENTE21, anchor="e", bg="white").grid(row=10, column=3, sticky="nsew")
+
+        alturaNuevoPaciente = tk.Label(self, text="2.3", font=FUENTE1, bg="white", anchor="w").grid(row=10, column=4, sticky="nsew")
+
+####
+        row11 = tk.Label(self, bg="white").grid(row=11, column=7, ipadx=80, ipady=0)
+
+#   RECOMENDACIONES----------------------------------------------------------------------------
+        label1 = tk.Label(self, text="  RECOMENDACIONES", font=FUENTE13, background="#5b9fc9",
+                          anchor="w", fg="white").grid(row=12, column=1, columnspan=6, sticky="NSEW")
+
+        row13 = tk.Label(self, bg="white").grid(row=13, column=7, ipadx=80, ipady=0)
+
+        dniNuevoPaciente = tk.Label(self, text="  Comer sano y hacer deporte.", font=FUENTE1, bg="white", anchor="w").grid(row=14,
+                                                                                                             column=1, columnspan=5,
+                                                                                                             sticky="nsew")
+
+
+        row13 = tk.Label(self, bg="white").grid(row=15, column=7, ipadx=80, ipady=40)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# -----------------------------------FIN CODIGO DAVID LINEA 310------------------------------------------------------
-# -----------------------------------INICIO CODIGO NESTOR LINEA 211--------------------------------------------------
+#   BOTON ----------------------------------------------------------------------------------------------------
+        button1 = tk.Button(self, text="Imprimir", font=FUENTE16, relief="groove", borderwidth=2,
+                            height=1, command=lambda: controller.show_frame(MostradorResultados))
+        button1.grid(row=18, column=4, columnspan=3, ipadx=27, sticky="e")
 
 class BuscadorDNI(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="#CCCCFF")
+        tk.Frame.__init__(self, parent, background="white")
 
-     # columnas
-        columna0 = tk.Label(self, bg="#CCCCFF")
-        columna0.grid(row=0, column=0, ipadx=80)
+# #   columns------------------------------------------------------------------------------------------------------------
+#         column0 = tk.Label(self, bg="yellow").grid(row=0, column=0, ipadx=80)
+#         column1 = tk.Label(self, bg="orange").grid(row=0, column=1, ipadx=80)
+#         column2 = tk.Label(self, bg="red").grid(row=0, column=2, ipadx=80)
+#         column3 = tk.Label(self, bg="green").grid(row=0, column=3, ipadx=80)
+#         column4 = tk.Label(self, bg="blue").grid(row=0, column=4, ipadx=80)
+#         column5 = tk.Label(self, bg="gray").grid(row=0, column=5, ipadx=80)
+#         column6 = tk.Label(self, bg="brown").grid(row=0, column=6, ipadx=80)
+#         column7 = tk.Label(self, bg="purple").grid(row=0, column=7, ipadx=80)
 
-        columna1 = tk.Label(self, bg="#CCCCFF")
-        columna1.grid(row=0, column=1, ipadx=80)
+#   columns------------------------------------------------------------------------------------------------------------
+        column0 = tk.Label(self, bg="white").grid(row=0, column=0, ipadx=80)
+        column1 = tk.Label(self, bg="white").grid(row=0, column=1, ipadx=80)
+        column2 = tk.Label(self, bg="white").grid(row=0, column=2, ipadx=80)
+        column3 = tk.Label(self, bg="white").grid(row=0, column=3, ipadx=80)
+        column4 = tk.Label(self, bg="white").grid(row=0, column=4, ipadx=80)
+        column5 = tk.Label(self, bg="white").grid(row=0, column=5, ipadx=80)
+        column6 = tk.Label(self, bg="white").grid(row=0, column=6, ipadx=80)
+        column7 = tk.Label(self, bg="white").grid(row=0, column=7, ipadx=80)
 
-        columna2 = tk.Label(self, bg="yellow")
-        columna2.grid(row=0, column=2, ipadx=80)
+        row1 = tk.Label(self, bg="white").grid(row=1, column=7, sticky="nsew", ipadx=80,ipady=50)
 
-        columna3 = tk.Label(self, bg="blue")
-        columna3.grid(row=0, column=3, ipadx=80)
+        label1 = tk.Label(self, text="Ingrese el DNI del paciente", font=FUENTE35, background="#5b9fc9",
+                          anchor="center", fg="white").grid(row=2, column=1, columnspan=6, sticky="NSEW", ipady=10)
 
-        columna4 = tk.Label(self, bg="red")
-        columna4.grid(row=0, column=4, ipadx=80)
+        row3 = tk.Label(self, bg="white").grid(row=3, column=7, sticky="nsew", ipadx=80, ipady=17)
 
-        columna5 = tk.Label(self, bg="#CCCCFF")
-        columna5.grid(row=0, column=5, ipadx=80)
+        label2 = tk.Entry(self, font=FUENTE35, background="white", width=20, justify="right",
+                          fg="black").grid(row=4, column=1, columnspan=3, sticky="e")
 
-        columna6 = tk.Label(self, bg="#CCCCFF")
-        columna6.grid(row=0, column=6, ipadx=80)
+        row4 = tk.Label(self, bg="white").grid(row=5, column=7, sticky="nsew", ipadx=80, ipady=17)
 
-        columna7 = tk.Label(self, bg="#CCCCFF")
-        columna7.grid(row=0, column=7, ipadx=80)
-
-        def verficar_id():
-            if paciente_id.get() == "74124434":
-
-                #debemos ingresar la pagina del paciente regitrado aqui
-                controller.show_frame(HistoriaPacienteAntiguo)
-                paciente_id.set("")
-
-#estoy teniendo problemas con el self dice que eno esta definido
-        label = tk.Label(self, text="Ingrese el DNI ", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=0, columnspan=4, padx=20, sticky="n")
-
-        # separacion titulo y densidad
-        fila6 = tk.Label(self, bg="#CCCCFF")
-        fila6.grid(row=6, column=3, columnspan=2, sticky="nsew", ipady=80)
-
-        paciente_id = tk.StringVar()
-        entry = tk.Entry(self , textvariable=paciente_id, font=FUENTE3, width=10, bg="#CCCCFF")
-        entry.focus_set()
-        entry.grid(row=7, column=2, columnspan=4, padx=20, sticky="s")
-
-        button = tk.Button(self, text="Aceptar", relief="groove", borderwidth=2, width=15, height=1,
-                           font=FUENTE3, command=verficar_id)
-        button.grid(row=7, column=4, columnspan=4, padx=20, sticky="s")
+        button1 = tk.Button(self, text="BUSCAR", font=FUENTE35, relief="groove", borderwidth=2, height=1,
+                            command=lambda: controller.show_frame(HistoriaPacienteAntiguo))
+        button1.grid(row=6, column=5, columnspan=2, ipadx=30)
 
 class HistoriaPacienteAntiguo(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg="")
+        tk.Frame.__init__(self, parent, bg="WHITE")
 
-        # columnas
-        columna0 = tk.Label(self, bg="#CCCCFF")
-        columna0.grid(row=0, column=0, ipadx=80)
+#   columns------------------------------------------------------------------------------------------------------------
+        column0 = tk.Label(self, bg="white").grid(row=0, column=0, ipadx=80)
+        column1 = tk.Label(self, bg="white").grid(row=0, column=1, ipadx=80)
+        column2 = tk.Label(self, bg="white").grid(row=0, column=2, ipadx=80)
+        column3 = tk.Label(self, bg="white").grid(row=0, column=3, ipadx=80)
+        column4 = tk.Label(self, bg="white").grid(row=0, column=4, ipadx=80)
+        column5 = tk.Label(self, bg="white").grid(row=0, column=5, ipadx=80)
+        column6 = tk.Label(self, bg="white").grid(row=0, column=6, ipadx=80)
+        column7 = tk.Label(self, bg="white").grid(row=0, column=7, ipadx=80)
 
-        columna1 = tk.Label(self, bg="#CCCCFF")
-        columna1.grid(row=0, column=1, ipadx=80)
+#   row1 ---------------------------------------------------------------------------------------------------------------
+        row1 = tk.Label(self, bg="white").grid(row=1, column=7, ipadx=80, ipady=0)
 
-        columna2 = tk.Label(self, bg="#CCCCFF")
-        columna2.grid(row=0, column=2, ipadx=80)
+#   APELLIDOS Y NOMBRES DEL PACIENTE-------------------------------------------------------------------------------------
+        label1 = tk.Label(self, text="  APELLIDOS Y NOMBRES DEL PACIENTE", font=FUENTE13, background="#5b9fc9",
+                          anchor="w", fg="white").grid(row=2, column=1, columnspan=6, sticky="NSEW", )
 
-        columna3 = tk.Label(self, bg="#CCCCFF")
-        columna3.grid(row=0, column=3, ipadx=80)
+        row3 = tk.Label(self, bg="white").grid(row=3, column=7, ipadx=80, ipady=0)
 
-        columna4 = tk.Label(self, bg="#CCCCFF")
-        columna4.grid(row=0, column=4, ipadx=80)
+        nombreNuevoPaciente = tk.Label(self, text="Juan Carlos Solís", font=FUENTE25, bg="white",
+                                       width=1).grid(row=4,column=1, columnspan=3,sticky="NSEW")
 
-        columna5 = tk.Label(self, bg="#CCCCFF")
-        columna5.grid(row=0, column=5, ipadx=80)
+        row5 = tk.Label(self, bg="white").grid(row=5, column=7, ipadx=80, ipady=0)
 
-        columna6 = tk.Label(self, bg="#CCCCFF")
-        columna6.grid(row=0, column=6, ipadx=80)
+#   DATOS PERSONALES---------------------------------------------------------------------------------------------------
+        label2 = tk.Label(self, text="  DATOS PERSONALES", font=FUENTE13, background="#5b9fc9", anchor="w", fg="white")
+        label2.grid(row=6, column=1, columnspan=6, sticky="NSEW", )
 
-        columna7 = tk.Label(self, bg="#CCCCFF")
-        columna7.grid(row=0, column=7, ipadx=80)
+        row7 = tk.Label(self, bg="white").grid(row=7, column=7, ipadx=80)
 
-        columna8 = tk.Label(self, bg="#CCCCFF")
-        columna8.grid(row=0, column=0, ipadx=80)
+#   DNI
+        label3 = tk.Label(self, text="DNI: ", font=FUENTE21, anchor="e", bg="white").grid(row=8, column=1, sticky="nsew")
 
-        columna9 = tk.Label(self, bg="#CCCCFF")
-        columna9.grid(row=0, column=1, ipadx=80)
+        dniNuevoPaciente = tk.Label(self, text="75369685", font=FUENTE1, bg="white", width=1).grid(row=8, column=2, sticky="nsew")
 
-        columna10 = tk.Label(self, bg="#CCCCFF")
-        columna10.grid(row=0, column=2, ipadx=80)
+#   EDAD
+        label4 = tk.Label(self, text="Edad: ", font=FUENTE21, anchor="e", bg="white").grid(row=9, column=1,
+                                                                                                   sticky="nsew")
 
-        columna11 = tk.Label(self, bg="#CCCCFF")
-        columna11.grid(row=0, column=3, ipadx=80, ipady=10)
+        nacimientoNuevoPaciente = tk.Label(self, text="59 años",font=FUENTE1, bg="white", width=1).grid(row=9, column=2, sticky="nsew")
 
-        # FILAS
+#   PESO
+        label5 = tk.Label(self, text="Peso: ", font=FUENTE21, anchor="e", bg="white").grid(row=8, column=3,
+                                                                                               sticky="nsew")
 
-        fila0 = tk.Label(self, bg="#CCCCFF")
-        fila0.grid(row=0, column=0, ipadx=80)
+        pesoNuevoPaciente = tk.Label(self, text="60 kg",font=FUENTE1, bg="white", width=1).grid(row=8, column=4, sticky="nsew")
 
-        fila1 = tk.Label(self, bg="#CCCCFF")
-        fila1.grid(row=1, column=0, ipadx=80)
+#   ALTURA
+        label6 = tk.Label(self, text="Altura: ", font=FUENTE21, anchor="e", bg="white").grid(row=9, column=3,
+                                                                                                 sticky="nsew")
 
-        fila2 = tk.Label(self, bg="#CCCCFF")
-        fila2.grid(row=2, column=0, ipadx=80)
+        alturaNuevoPaciente = tk.Label(self, text="160 cm", font=FUENTE1, bg="white", width=1).grid(row=9, column=4, sticky="nsew")
 
-        fila3 = tk.Label(self, bg="#CCCCFF")
-        fila3.grid(row=3, column=0, ipadx=80)
+ #  SEXO
+        label7 = tk.Label(self, text="Sexo:", font=FUENTE21, anchor="e", background="white").grid(row=8, column=5, sticky="nsew")
 
-        fila4 = tk.Label(self, bg="#CCCCFF")
-        fila4.grid(row=4, column=0, ipadx=80)
+        sexo = tk.Label(self, text="Femenino", font=FUENTE1, bg="white", width=1).grid(row=8, column=6, sticky="nsew")
 
-        fila5 = tk.Label(self, bg="#CCCCFF")
-        fila5.grid(row=5, column=0, ipadx=80)
+#  IMC
+        label17 = tk.Label(self, text="IMC:", font=FUENTE21, anchor="e", background="white").grid(row=9, column=5, sticky="nsew")
 
-        fila6 = tk.Label(self, bg="#CCCCFF")
-        fila6.grid(row=6, column=0, ipadx=80)
-
-        fila7 = tk.Label(self, bg="#CCCCFF")
-        fila7.grid(row=7, column=0, ipadx=80)
-
-        fila8 = tk.Label(self, bg="#CCCCFF")
-        fila8.grid(row=4, column=0, ipadx=80)
-
-        fila9 = tk.Label(self, bg="#CCCCFF")
-        fila9.grid(row=5, column=0, ipadx=80)
-
-        fila10 = tk.Label(self, bg="#CCCCFF")
-        fila10.grid(row=6, column=0, ipadx=80)
-
-        fila11 = tk.Label(self, bg="#CCCCFF")
-        fila11.grid(row=7, column=0, ipadx=80)
-
-        # nombre
-        label = tk.Label(self, text="JORGE PEREZ QUISPE", font=FUENTE3, background="#CCCCFF")
-        label.place(x=190, y=150)
-
- #comenzamos con las zonas
-    #primera tabla
-
-        #Zona DNI
-        label = tk.Label(self, text="DNI", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=0, columnspan=4, padx=20, sticky="s")
-
-        label = tk.Label(self, text="DNI", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=2, columnspan=4, padx=20, sticky="s")
-
-        # Zona edad
-        label = tk.Label(self, text="Edad", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=4, column=0, columnspan=4, padx=20, sticky="s")
-
-        label = tk.Label(self, text="60", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=4, column=2, columnspan=4, padx=20, sticky="s")
-
-        # Zona nacimiento
-
-        label = tk.Label(self, text="Fecha de nacimiento:", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=3, columnspan=4, padx=20, sticky="s")
-
-        label = tk.Label(self, text="13-04-1960", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=4, columnspan=4, padx=20, sticky="s")
-
-        #Zona sexo
-        label = tk.Label(self, text="Sexo:", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=4, column=3, columnspan=4, padx=20, sticky="s")
-
-        label = tk.Label(self, text="masculino", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=4, column=4, columnspan=4, padx=20, sticky="s")
-
-        # Zona IMC
-        label = tk.Label(self, text="IMC:", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=5, columnspan=4, padx=20, sticky="s")
-
-        label = tk.Label(self, text="25% ", font=FUENTE3, background="#CCCCFF")
-        label.grid(row=3, column=6, columnspan=4, padx=20, sticky="s")
-
-    #tabla 2
-
-        #Zona caidas
-        #label = tk.Label(self, text="Cantidad de caídas anteriores:", font=FUENTE3, background="#CCCCFF")
-        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-        # label = tk.Label(self, text="3", font=FUENTE3, background="#CCCCFF")
-       # label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-        # Zona tabaco
-          #label = tk.Label(self, text="Consumo de tabaco:", font=FUENTE3, background="#CCCCFF")
-           #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-        #label = tk.Label(self, text="No", font=FUENTE3, background="#CCCCFF")
-        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-        # Zona Fracturas
-        #label = tk.Label(self, text="Cantidad de fracturas anteriores:", font=FUENTE3, background="#CCCCFF")
-        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-        #label = tk.Label(self, text="1", font=FUENTE3, background="#CCCCFF")
-       # label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-        #Zona alcohol
-        #label = tk.Label(self, text="Consumo de alcohol :", font=FUENTE3, background="#CCCCFF")
-        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
-
-       # label = tk.Label(self, text="si", font=FUENTE3, background="#CCCCFF")
-        #label.grid(row=, column=, columnspan=4, padx=20, sticky="w")
+        imc = tk.Label(self, text="18.3", font=FUENTE1, bg="white", width=1).grid(row=9, column=6, sticky="nsew")
 
 
-       #boton de actualizar
-        button1 = tk.Button(self, text="Actualizar Datos", font=FUENTE3, relief="groove", borderwidth=2, width=30, height=1)
-        button1.place(x=140, y=400)
+        row11 = tk.Label(self, bg="white").grid(row=11, column=7, ipadx=80)
+
+#   ANTECEDENTES---------------------------------------------------------------------------------------------------------
+        label9 = tk.Label(self, text="  ANTECEDENTES", font=FUENTE13, background="#5b9fc9", anchor="w", fg="white")
+        label9.grid(row=12, column=1, columnspan=6, sticky="NSEW", )
+
+        row13 = tk.Label(self, bg="white").grid(row=13, column=7, ipadx=80)
+
+#   CANTIDAD DE CAIDAS ANTERIORES
+        label10 = tk.Label(self, text="Cantidad de caídas anteriores:  ", font=FUENTE21, anchor="e", bg="white").grid(
+            row=14, column=1, columnspan=2, sticky="nsew")
+
+        caidasNuevoPaciente = tk.Label(self, text="2", font=FUENTE1, bg="white", width=1).grid(row=14, column=3, sticky="nsew")
+
+#   CANTIDAD DE FRACTURAS ANTERIORES
+        label11 = tk.Label(self, text="Cantidad de fracturas anteriores: ", font=FUENTE21, anchor="e", bg="white")
+        label11.grid(row=14, column=4, columnspan=2, sticky="nsew")
+
+        fracturasNuevoPaciente = tk.Label(self, text="0", font=FUENTE1, bg="white", width=1)
+        fracturasNuevoPaciente.grid(row=14, column=6, sticky="nsew")
+
+ #   CONSUME TABACO
+        label12 = tk.Label(self, text=" Consumidor de tabaco: ", font=FUENTE21, anchor="e", bg="white")
+        label12.grid(row=15, column=1, columnspan=2, sticky="nsew", ipady=5)
+
+        tabaco = tk.Label(self, text="Sí", font=FUENTE1, bg="white", width=1)
+        tabaco.grid(row=15, column=3, sticky="nsew")
+
+#   BEBIDAS ALCOHOLICAS
+        label12 = tk.Label(self, text=" Consumidor de alcohol: ", font=FUENTE21, anchor="e", bg="white")
+        label12.grid(row=15, column=4, columnspan=2, sticky="nsew", ipady=5)
+
+        alcohol = tk.Label(self, text="Sí", font=FUENTE1, bg="white", width=1)
+        alcohol.grid(row=15, column=6, sticky="nsew")
+
+        row17 = tk.Label(self, bg="white").grid(row=17, column=7, ipadx=80)
+
+#   HISTORIAL------------------------------------------------------------------------------------------------
+        label14 = tk.Label(self, text="HISTORIAL", font=FUENTE13,anchor="center", background="#5b9fc9", fg="white")
+        label14.grid(row=18, column=1, columnspan=6, sticky="NSEW", )
+
+        row19 = tk.Label(self, bg="white").grid(row=19, column=7, ipadx=80)
+
+#   DNI
+        tabla1 = tk.Label(self, text="FECHA", font=FUENTE21, anchor="center", background="#5b9fc9", fg="white").grid(row=20, column=1, sticky="nsew")
+        tabla2 = tk.Label(self, text="DMO", font=FUENTE21, anchor="center", background="#5b9fc9", fg="white").grid(row=20, column=2, sticky="nsew")
+        tabla3 = tk.Label(self, text="T-SCORE", font=FUENTE21, anchor="center", background="#5b9fc9", fg="white").grid(row=20, column=3, sticky="nsew")
+        tabla4 = tk.Label(self, text="RIESGO DE FRACTURA", font=FUENTE21, anchor="center", background="#5b9fc9", fg="white").grid(row=20, column=4, columnspan=2, sticky="nsew")
+        tabla5 = tk.Label(self, text=" ", font=FUENTE21, anchor="center", background="#5b9fc9", fg="white").grid(row=20,column=6,sticky="nsew")
+
+#   Formato 1---
+        fechaVariable1 = tk.Label(self, text="02/06/2013", font=FUENTE1, bg="white", width=1, relief="solid", borderwidth=1)
+        fechaVariable1.grid(row=21, column=1, sticky="nsew")
+
+        dmoVariable1 = tk.Label(self, text="1.0", font=FUENTE1, bg="white", width=1, relief="solid",borderwidth=1)
+        dmoVariable1.grid(row=21, column=2, sticky="nsew")
+
+        scoreVariable1 = tk.Label(self, text="2", font=FUENTE1, bg="white", width=1, relief="solid", borderwidth=1)
+        scoreVariable1.grid(row=21, column=3, sticky="nsew")
+
+        riesgoVariable1 = tk.Label(self, text="80%", font=FUENTE1, bg="white", width=1, relief="solid",borderwidth=1)
+        riesgoVariable1.grid(row=21, column=4, columnspan=2, sticky="nsew")
+
+        detalleVariable1 = tk.Label(self, text="Detalle...", font=FUENTE1, bg="white", width=1, relief="solid",borderwidth=1)
+        detalleVariable1.grid(row=21, column=6, sticky="nsew")
 
 
+#   BOTON FINALIZAR----------------------------------------------------------------------------------------------------
+        button1 = tk.Button(self, text="ACTUALIZAR DATOS", font=FUENTE16, relief="groove", borderwidth=2, height=1,
+                            command=lambda: controller.show_frame(ActualizarRegistroNuevo))
+        button1.grid(row=39, column=5, columnspan=2, ipadx=27, pady=35)
 
 class RegistrarNuevoPaciente(tk.Frame):
 
@@ -547,9 +478,9 @@ class RegistrarNuevoPaciente(tk.Frame):
 #   row1 ---------------------------------------------------------------------------------------------------------------
         row1 = tk.Label(self, bg="white").grid(row=1, column=7, ipadx=80, ipady=0)
 
-# APELLIDOS Y NOMBRES DEL PACIENTE-------------------------------------------------------------------------------------
+#   APELLIDOS Y NOMBRES DEL PACIENTE-------------------------------------------------------------------------------------
         label1 = tk.Label(self, text="  APELLIDOS Y NOMBRES DEL PACIENTE", font=FUENTE13, background="#5b9fc9",
-                          anchor="w", fg="white").grid(row=2, column=1, columnspan=6, sticky="NSEW",)
+                          anchor="w", fg="white").grid(row=2, column=1, columnspan=6, sticky="NSEW")
 
         row3 = tk.Label(self, bg="white").grid(row=3, column=7, ipadx=80, ipady=0)
 
@@ -602,7 +533,7 @@ class RegistrarNuevoPaciente(tk.Frame):
 
         row11 = tk.Label(self, bg="white").grid(row=11, column=7, ipadx=80)
 
-# ANTECEDENTES---------------------------------------------------------------------------------------------------------
+#   ANTECEDENTES---------------------------------------------------------------------------------------------------------
         label9 = tk.Label(self, text="  ANTECEDENTES", font=FUENTE13, background="#5b9fc9", anchor="w", fg="white")
         label9.grid(row=12, column=1, columnspan=6, sticky="NSEW",)
 
@@ -614,7 +545,7 @@ class RegistrarNuevoPaciente(tk.Frame):
 
         caidasNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=14, column=3, sticky="nsew")
 
-# CANTIDAD DE FRACTURAS ANTERIORES
+#   CANTIDAD DE FRACTURAS ANTERIORES
         label11 = tk.Label(self, text="Cantidad de fracturas anteriores: ", font=FUENTE1, anchor="e", bg="white")
         label11.grid(row=14, column=4,columnspan=2, sticky="nsew")
 
@@ -659,40 +590,40 @@ class RegistrarNuevoPaciente(tk.Frame):
 
         fechaExamenNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=20, column=2, sticky="nsew")
 
-# DMO
+#   DMO
         label16 = tk.Label(self, text="DMO: ", font=FUENTE1, anchor="e", bg="white").grid(row=20, column=3, sticky="nsew")
 
         dmoNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=20, column=4, sticky="nsew")
 
-# T-Score
+#   T-Score
         label17 = tk.Label(self, text="T-Score: ", font=FUENTE1, anchor="e", bg="white").grid(row=20,
                                                                                               column=5, sticky="nsew")
 
         scoreNuevoPaciente = tk.Entry(self, font=FUENTE1, bg="white", width=1).grid(row=20, column=6, sticky="nsew")
 
-#   (DD//MM/AAAA)
+#   (DD/MM/AAAA)
         label18 = tk.Label(self, text="(DD/MM/AAAA) ", font=FUENTE14, anchor="e", bg="white")
         label18.grid(row=21, column=1, sticky="nsew")
 
-#   (GM/CM)
-        label19 = tk.Label(self, text="(gm/cm²) ", font=FUENTE14, anchor="e", bg="white")
+#   (G/CM)
+        label19 = tk.Label(self, text="(g/cm²) ", font=FUENTE14, anchor="e", bg="white")
         label19.grid(row=21, column=3, sticky="nsew")
 
         row22 = tk.Label(self, bg="white").grid(row=22, column=7, ipadx=80)
 
 #   BOTON FINALIZAR----------------------------------------------------------------------------------------------------
-        button1 = tk.Button(self, text="FINALIZAR", font=FUENTE16, relief="groove", borderwidth=2, height=1)
+        button1 = tk.Button(self, text="FINALIZAR", font=FUENTE16, relief="groove", borderwidth=2, height=1,
+                            command=lambda: controller.show_frame(MostradorResultados))
         button1.grid(row=23, column=5, columnspan=2, ipadx=27)
 
         row24 = tk.Label(self, bg="white").grid(row=24, column=7, ipadx=80, ipady=10)
 
-        botonRegresar = tk.Button(self, text="←", font=FUENTE17, relief="groove", borderwidth=2, width=5, height=1, bg="white")
-        botonRegresar.place(x=3, y=3)
+        # botonRegresar = tk.Button(self, text="←", font=FUENTE17, relief="groove", borderwidth=2, width=5, height=1, bg="white")
+        # botonRegresar.place(x=3, y=3)
 
 
 
 
 app = AuquishApp()
-#app.geometry("1150x720")
 app.resizable(False, False)
 app.mainloop()
