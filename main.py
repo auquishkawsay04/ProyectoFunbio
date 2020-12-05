@@ -190,7 +190,7 @@ class ActualizarRegistroNuevo(tk.Frame):
         #TABLA DATOS DEXA HORIZONTAL------------------------------------------------------------------------------------
 
         label = tk.Label(self, font=FUENTE1, anchor="center", background="white", fg="black").grid(row=29, column=3, sticky="nsew")
-        label = tk.Label(self, text="DMO", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=4, sticky="nsew")
+        label = tk.Label(self, text="DMO (g/cm²)", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=4, sticky="nsew")
         label = tk.Label(self, text="T-SCORE", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=5, sticky="nsew")
         label = tk.Label(self, text="Z-SCORE", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=6, sticky="nsew")
 
@@ -607,7 +607,7 @@ class RegistrarNuevoPaciente(tk.Frame):
         #TABLA DATOS DEXA HORIZONTAL------------------------------------------------------------------------------------
 
         label = tk.Label(self, font=FUENTE1, anchor="center", background="white", fg="black").grid(row=29, column=3, sticky="nsew")
-        label = tk.Label(self, text="DMO", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=4, sticky="nsew")
+        label = tk.Label(self, text="DMO (g/cm²)", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=4, sticky="nsew")
         label = tk.Label(self, text="T-SCORE", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=5, sticky="nsew")
         label = tk.Label(self, text="Z-SCORE", font=FUENTE1, anchor="center", background="#e0e0e0", fg="black").grid(row=29, column=6, sticky="nsew")
 
